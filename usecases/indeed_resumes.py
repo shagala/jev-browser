@@ -43,7 +43,7 @@ READ_RESUME = """(async () => {
   return JSON.stringify({name: anchor.getAttribute('download'), type: blob.type, b64: btoa(binary)});
 })()"""
 DETAILS = """JSON.stringify({text: document.body.innerText})"""
-APPLIED_TO = re.compile(r"Applied to:\s*\n([^\n]+)")
+APPLIED_TO = re.compile(r"Applied to:\s*([^\n]+)")
 
 
 def slug(name):
@@ -124,13 +124,24 @@ def mark_processed(browser):
     time.sleep(1.5)
 
 
-def process(list_url, *, dry_run=False, limit=None, show=False, on_event=None):
+def process(list_url, *, dry_run=False, limit=None, show=False, live=False, on_event=None):
     """Walk the New queue: read each resume blob, ingest it, then mark the candidate.
 
     on_event(stage, name, detail) reports progress; the CLI prints it and the inspector renders it.
     Returns the number of failures.
     """
     emit = on_event or (lambda *_args: None)
+
+    def frame(browser, label=""):
+        """Optional JPEG for the inspector's live view; the CLI path never pays for it."""
+        if not live:
+            return
+        try:
+            shot = browser.call("Page.captureScreenshot", format="jpeg", quality=60)["data"]
+            emit("frame", None, {"jpeg": shot, "url": browser.evaluate("location.href"), "title": label})
+        except Exception:
+            pass
+
     RESUMES.mkdir(parents=True, exist_ok=True)
     browser = Browser(list_url)
     failures = 0
@@ -146,17 +157,20 @@ def process(list_url, *, dry_run=False, limit=None, show=False, on_event=None):
         if limit:
             candidates = candidates[:limit]
         emit("listed", None, [c["name"] for c in candidates])
+        frame(browser, "New applicants")
         for entry in candidates:
             name = entry["name"]
             try:
                 emit("opening", name, "opening profile")
                 browser.call("Page.navigate", url=entry["href"])
                 time.sleep(5)
+                frame(browser, f"{name} · profile")
                 filename, data = read_resume(browser, name)
                 person, position = contact(browser, name)
                 path = RESUMES / f"{candidate_id(entry['href'])}-{filename}"
                 path.write_bytes(data)
                 emit("downloaded", name, f"{len(data):,} B → {path}")
+                frame(browser, f"{name} · resume read")
                 if dry_run:
                     emit("dry-run", name, f"would ingest {person} | {position}")
                     continue
@@ -165,6 +179,7 @@ def process(list_url, *, dry_run=False, limit=None, show=False, on_event=None):
                 emit("uploaded", name, reply)
                 mark_processed(browser)
                 emit("done", name, f"marked {PROCESSED_STATUS}")
+                frame(browser, f"{name} · {PROCESSED_STATUS}")
             except Exception as error:
                 failures += 1
                 emit("failed", name, str(error))

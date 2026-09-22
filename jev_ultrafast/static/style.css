@@ -750,3 +750,4 @@ textarea:focus-visible {
 .stage-failed { color: #c0392b; }
 .stage-done, .stage-uploaded { color: #1e8449; }
 .stage-uploading, .stage-opening, .stage-downloaded { color: #b9770e; }
+

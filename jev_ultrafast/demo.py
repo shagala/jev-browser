@@ -1,6 +1,7 @@
 """Loopback-only inspector for the Jev browser agent."""
 
 import atexit
+import base64
 import json
 import os
 import secrets
@@ -21,6 +22,7 @@ AGENT = None
 # The Indeed ingest runs for minutes; it gets its own lock so it never blocks the inspector's own steps.
 INGEST_LOCK = threading.Lock()
 INGEST = {"running": False, "candidates": [], "failures": 0, "error": None, "dry_run": True}
+INGEST_FRAME = {"jpeg": None, "url": "", "title": ""}
 
 
 def load_environment():
@@ -71,6 +73,9 @@ def command(name, body):
 
 
 def ingest_event(stage, name, detail):
+    if stage == "frame":
+        INGEST_FRAME.update(detail)
+        return
     if stage == "listed":
         INGEST["candidates"] = [{"name": n, "stage": "queued", "detail": ""} for n in detail]
         return
@@ -94,6 +99,7 @@ def start_ingest(body):
         raise ValueError("An ingest run is already in progress")
     limit = body.get("limit")
     INGEST.update(running=True, candidates=[], failures=0, error=None, dry_run=bool(body.get("dry_run", True)))
+    INGEST_FRAME.update(jpeg=None, url="", title="")
 
     def worker():
         try:
@@ -102,6 +108,7 @@ def start_ingest(body):
                 dry_run=INGEST["dry_run"],
                 limit=int(limit) if limit else None,
                 show=bool(body.get("show")),
+                live=bool(body.get("live")),
                 on_event=ingest_event,
             )
         except Exception as error:
@@ -133,7 +140,12 @@ class Handler(BaseHTTPRequestHandler):
             with LOCK:
                 return self.send(200, json.dumps(response_state()))
         if path == "/api/ingest/state":
-            return self.send(200, json.dumps(INGEST))
+            frame = {k: INGEST_FRAME[k] for k in ("url", "title")}
+            return self.send(200, json.dumps({**INGEST, "frame": bool(INGEST_FRAME["jpeg"]), **frame}))
+        if path == "/api/ingest/frame":
+            if not INGEST_FRAME["jpeg"]:
+                return self.send(404, "No frame", "text/plain")
+            return self.send(200, base64.b64decode(INGEST_FRAME["jpeg"]), "image/jpeg")
         if path == "/demo.mp4":
             video = ROOT.parent / "docs" / "demo.mp4"
             if video.exists():

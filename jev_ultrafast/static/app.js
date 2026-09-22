@@ -256,6 +256,15 @@ function renderIngest(state) {
         )}</td><td class="detail">${escape(c.detail)}</td></tr>`,
     )
     .join("");
+  if (state.frame) {
+    // Reuse the main demo viewport so both use cases and the agent demo show one browser.
+    $("empty").hidden = true;
+    $("screenshot").hidden = false;
+    $("screenshot").src = `/api/ingest/frame?t=${Date.now()}`;
+    $("targets").innerHTML = "";
+    $("url").textContent = state.url || "Indeed";
+    $("page-title").textContent = state.title || "Indeed → Flux";
+  }
   const failed = rows.filter((c) => c.stage === "failed").length;
   $("ingest-note").textContent = state.error
     ? `Error: ${state.error}`
@@ -285,6 +294,7 @@ $("ingest-run").addEventListener("click", async () => {
         list_url: $("ingest-url").value,
         dry_run: $("ingest-dry").checked,
         show: $("ingest-show").checked,
+        live: $("ingest-live").checked,
         limit: limit ? Number(limit) : null,
       }),
     });
