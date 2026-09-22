@@ -1,0 +1,6 @@
+[
+  {"name": "mia-ccs-spring", "origin": "MIA", "destination": "CCS", "start": "2027-03-23", "end": "2027-04-05"},
+  {"name": "mia-mad-spring", "origin": "MIA", "destination": "MAD", "start": "2027-03-23", "end": "2027-04-05"},
+  {"name": "mia-ccs-nov",    "origin": "MIA", "destination": "CCS", "start": "2026-11-21", "end": "2026-11-28"},
+  {"name": "mia-mex-xmas",   "origin": "MIA", "destination": "MEX", "start": "2026-12-25", "end": "2027-01-03"}
+]

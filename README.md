@@ -91,6 +91,10 @@ uv run --env-file .env python examples/run.py \
 
 `uv run --env-file .env python examples/flights.py --keep-open` performs the flight search, checks the actual route/date/results, and saves its trace. It does not select or book a flight.
 
+## Use cases (this fork)
+
+- **Flights date-grid tracker** — daily round-trip price snapshots for the watches in `usecases/watches.json`, stored in Postgres. `uv run --env-file .env python -m usecases.flights_grid`. See [docs/flights-grid.md](docs/flights-grid.md).
+
 ## Why it moves
 
 - **One request per decision cycle.** Operation and target heads share the same observed state.
