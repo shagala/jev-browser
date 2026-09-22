@@ -100,7 +100,8 @@ def ingest(person, position, candidate, filename, data):
         headers={"Authorization": f"Bearer {os.environ['FLUX_API_TOKEN']}"},
         data={"data": json.dumps(payload)},
         files={"file": (filename, data, "application/pdf")},
-        timeout=60,
+        # Flux screens the resume synchronously; observed ~65 s for a 64 KB PDF.
+        timeout=float(os.environ.get("FLUX_TIMEOUT", "300")),
     )
     if response.is_error:
         raise ValueError(f"Flux returned HTTP {response.status_code}: {response.text[:200]}")
