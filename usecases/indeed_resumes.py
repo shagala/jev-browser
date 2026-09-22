@@ -18,6 +18,7 @@ from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 
 import httpx
+from browser_harness.helpers import cdp
 
 from jev_ultrafast.browser import Browser
 from jev_ultrafast.demo import load_environment
@@ -127,12 +128,16 @@ def main(argv=None):
     parser.add_argument("--list-url", required=True, help="Indeed candidates URL filtered to statusName=New")
     parser.add_argument("--dry-run", action="store_true", help="Download only; no upload, no status change.")
     parser.add_argument("--limit", type=int, help="Process at most N candidates.")
+    parser.add_argument("--show", action="store_true", help="Bring the agent's tab to the front so the run is visible.")
     args = parser.parse_args(argv)
     load_environment()
     RESUMES.mkdir(parents=True, exist_ok=True)
     browser = Browser(args.list_url)
     failures = 0
     try:
+        if args.show:
+            # The agent works in a background tab by default; surface it for a live demo.
+            cdp("Target.activateTarget", targetId=browser.target)
         time.sleep(6)
         candidates = json.loads(browser.evaluate(CANDIDATE_LINKS))[: args.limit]
         print(f"{len(candidates)} new candidate(s): {', '.join(c['name'] for c in candidates)}", flush=True)
