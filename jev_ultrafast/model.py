@@ -163,16 +163,23 @@ def field_text(context):
         raise ValueError("TYPE_TEXT needs TEXT_MODEL_API_KEY; no text is hardcoded or guessed by the executor.")
     base = os.environ.get("TEXT_MODEL_BASE_URL", "https://api.deepseek.com/v1").rstrip("/")
     model = os.environ.get("TEXT_MODEL", "deepseek-chat")
-    reasoning = {"thinking": {"type": "disabled"}} if "api.deepseek.com/" in base else {"reasoning": {"effort": "low"}}
-    if os.environ.get("TEXT_MODEL_REASONING") == "none":
-        reasoning = {"reasoning": {"enabled": False}}
+    disabled = os.environ.get("TEXT_MODEL_REASONING") == "none"
+    limit = {"max_tokens": 1024}
+    if "api.openai.com/" in base:
+        # OpenAI's native endpoint takes max_completion_tokens, and reasoning_effort only on reasoning models.
+        reasoning = {"reasoning_effort": "none" if disabled else "low"} if model.startswith(("gpt-5", "o")) else {}
+        limit = {"max_completion_tokens": 1024}
+    elif "api.deepseek.com/" in base:
+        reasoning = {"thinking": {"type": "disabled"}}
+    else:
+        reasoning = {"reasoning": {"enabled": False}} if disabled else {"reasoning": {"effort": "low"}}
     started = time.perf_counter()
     result = post_json(
         base + "/chat/completions",
         key,
         {
             "model": model,
-            "max_tokens": 1024,
+            **limit,
             "response_format": {"type": "json_object"},
             **reasoning,
             "messages": [
