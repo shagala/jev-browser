@@ -242,3 +242,59 @@ fetch("/api/state")
   .catch(() => {
     $("status").textContent = "Cannot reach local demo server";
   });
+
+// --- Indeed → Flux ingest panel -------------------------------------------------------------
+let ingestTimer = null;
+function renderIngest(state) {
+  const rows = state.candidates || [];
+  $("ingest-table").hidden = rows.length === 0;
+  $("ingest-rows").innerHTML = rows
+    .map(
+      (c) =>
+        `<tr><td>${escape(c.name)}</td><td class="stage stage-${escape(c.stage)}">${escape(
+          c.stage,
+        )}</td><td class="detail">${escape(c.detail)}</td></tr>`,
+    )
+    .join("");
+  const failed = rows.filter((c) => c.stage === "failed").length;
+  $("ingest-note").textContent = state.error
+    ? `Error: ${state.error}`
+    : state.running
+      ? `Running${state.dry_run ? " (dry run)" : ""} · ${rows.length} candidate(s)`
+      : rows.length
+        ? `Finished · ${rows.length - failed} ok, ${failed} failed`
+        : "Idle";
+  $("ingest-run").disabled = Boolean(state.running);
+}
+async function pollIngest() {
+  const state = await fetch("/api/ingest/state").then((r) => r.json());
+  renderIngest(state);
+  if (!state.running && ingestTimer) {
+    clearInterval(ingestTimer);
+    ingestTimer = null;
+  }
+}
+$("ingest-run").addEventListener("click", async () => {
+  const limit = $("ingest-limit").value;
+  $("ingest-run").disabled = true;
+  try {
+    const response = await fetch("/api/ingest/start", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "X-Demo-Token": token },
+      body: JSON.stringify({
+        list_url: $("ingest-url").value,
+        dry_run: $("ingest-dry").checked,
+        show: $("ingest-show").checked,
+        limit: limit ? Number(limit) : null,
+      }),
+    });
+    const data = await response.json();
+    if (!response.ok) throw Error(data.error || "Request failed");
+    renderIngest(data);
+    if (!ingestTimer) ingestTimer = setInterval(pollIngest, 1000);
+  } catch (error) {
+    $("ingest-note").textContent = `Error: ${error.message}`;
+    $("ingest-run").disabled = false;
+  }
+});
+pollIngest();

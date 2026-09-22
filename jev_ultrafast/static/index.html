@@ -60,6 +60,25 @@ Find one-way flights from Zurich to London on September 20, 2026, for one adult 
         </div>
       </div>
       <div id="error" role="alert" hidden></div>
+      <section class="ingest">
+        <div class="task-label">
+          <label for="ingest-url">Indeed → Flux · new applicants</label>
+          <span class="ingest-note" id="ingest-note">Idle</span>
+        </div>
+        <div class="task-row">
+          <input id="ingest-url" type="url" placeholder="https://employers.indeed.com/candidates?...&amp;statusName=New" />
+          <button type="button" id="ingest-run" class="primary">Run ingest <span>↗</span></button>
+        </div>
+        <div class="controls">
+          <label class="overlay-control"><input type="checkbox" id="ingest-dry" checked /> Dry run</label>
+          <label class="overlay-control">Limit <input type="number" id="ingest-limit" min="1" max="50" style="width:4rem" /></label>
+          <label class="overlay-control"><input type="checkbox" id="ingest-show" /> Show tab</label>
+        </div>
+        <table id="ingest-table" hidden>
+          <thead><tr><th>Candidate</th><th>Stage</th><th>Detail</th></tr></thead>
+          <tbody id="ingest-rows"></tbody>
+        </table>
+      </section>
       <section class="workspace">
         <div class="browser-panel">
           <div class="browser-bar">

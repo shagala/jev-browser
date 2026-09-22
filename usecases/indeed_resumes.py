@@ -124,6 +124,56 @@ def mark_processed(browser):
     time.sleep(1.5)
 
 
+def process(list_url, *, dry_run=False, limit=None, show=False, on_event=None):
+    """Walk the New queue: read each resume blob, ingest it, then mark the candidate.
+
+    on_event(stage, name, detail) reports progress; the CLI prints it and the inspector renders it.
+    Returns the number of failures.
+    """
+    emit = on_event or (lambda *_args: None)
+    RESUMES.mkdir(parents=True, exist_ok=True)
+    browser = Browser(list_url)
+    failures = 0
+    try:
+        if show:
+            # The agent works in a background tab by default; surface it for a live demo.
+            cdp("Target.activateTarget", targetId=browser.target)
+        time.sleep(6)
+        page = browser.observe(screenshot=False)
+        if "secure.indeed.com/auth" in page["url"] or "Sign In" in page["title"]:
+            raise ValueError("Indeed is signed out; sign in to employers.indeed.com in this Chrome profile and retry")
+        candidates = json.loads(browser.evaluate(CANDIDATE_LINKS))
+        if limit:
+            candidates = candidates[:limit]
+        emit("listed", None, [c["name"] for c in candidates])
+        for entry in candidates:
+            name = entry["name"]
+            try:
+                emit("opening", name, "opening profile")
+                browser.call("Page.navigate", url=entry["href"])
+                time.sleep(5)
+                filename, data = read_resume(browser, name)
+                person, position = contact(browser, name)
+                path = RESUMES / f"{candidate_id(entry['href'])}-{filename}"
+                path.write_bytes(data)
+                emit("downloaded", name, f"{len(data):,} B → {path}")
+                if dry_run:
+                    emit("dry-run", name, f"would ingest {person} | {position}")
+                    continue
+                emit("uploading", name, "ingesting into Flux (screening takes ~1 min)")
+                reply = ingest(person, position, candidate_id(entry["href"]), filename, data)
+                emit("uploaded", name, reply)
+                mark_processed(browser)
+                emit("done", name, f"marked {PROCESSED_STATUS}")
+            except Exception as error:
+                failures += 1
+                emit("failed", name, str(error))
+    finally:
+        browser.close()
+    emit("finished", None, failures)
+    return failures
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--list-url", required=True, help="Indeed candidates URL filtered to statusName=New")
@@ -132,39 +182,18 @@ def main(argv=None):
     parser.add_argument("--show", action="store_true", help="Bring the agent's tab to the front so the run is visible.")
     args = parser.parse_args(argv)
     load_environment()
-    RESUMES.mkdir(parents=True, exist_ok=True)
-    browser = Browser(args.list_url)
-    failures = 0
-    try:
-        if args.show:
-            # The agent works in a background tab by default; surface it for a live demo.
-            cdp("Target.activateTarget", targetId=browser.target)
-        time.sleep(6)
-        candidates = json.loads(browser.evaluate(CANDIDATE_LINKS))[: args.limit]
-        print(f"{len(candidates)} new candidate(s): {', '.join(c['name'] for c in candidates)}", flush=True)
-        for entry in candidates:
-            name = entry["name"]
-            try:
-                browser.call("Page.navigate", url=entry["href"])
-                time.sleep(5)
-                filename, data = read_resume(browser, name)
-                person, position = contact(browser, name)
-                path = RESUMES / f"{candidate_id(entry['href'])}-{filename}"
-                path.write_bytes(data)
-                note = f"{len(data):,} B → {path}"
-                if args.dry_run:
-                    print(f"  {name:20} dry-run  {note}  {person} | {position[:40]}", flush=True)
-                    continue
-                reply = ingest(person, position, candidate_id(entry["href"]), filename, data)
-                mark_processed(browser)
-                print(f"  {name:20} ok       {note}  ingested, marked {PROCESSED_STATUS}  {reply[:60]}", flush=True)
-            except Exception as error:
-                failures += 1
-                print(f"  {name:20} FAILED   {error}", flush=True)
-    finally:
-        browser.close()
-    print(f"{failures} failure(s)" if failures else "all candidates processed", flush=True)
-    return 1 if failures else 0
+
+    def report(stage, name, detail):
+        if stage == "listed":
+            print(f"{len(detail)} new candidate(s): {', '.join(detail)}", flush=True)
+        elif stage == "finished":
+            print(f"{detail} failure(s)" if detail else "all candidates processed", flush=True)
+        else:
+            print(f"  {name:20} {stage:11} {detail}", flush=True)
+
+    return 1 if process(
+        args.list_url, dry_run=args.dry_run, limit=args.limit, show=args.show, on_event=report
+    ) else 0
 
 
 if __name__ == "__main__":
