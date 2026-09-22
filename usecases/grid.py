@@ -10,6 +10,14 @@ CITIES = {"MIA": "Miami", "CCS": "Caracas", "MAD": "Madrid", "MEX": "Mexico City
 HALF = timedelta(days=3)  # Google centres the grid on the selected pair: 3 days each side.
 STEP = timedelta(days=7)
 HOME = "https://www.google.com/travel/flights?hl=en&curr=USD"
+# Google's calendar picker also shows a price per day, so goals must name the "Date grid" view explicitly.
+DATE_GRID_STEP = (
+    'Click the button named "Date grid" (next to "Price graph", below the flight results) to open the grid of '
+    "round-trip prices with departure dates as columns and return dates as rows. That button is often below "
+    "the visible area: scroll down until it appears, then click it. Do not open the Departure or Return date "
+    "fields or the calendar. Stop when that price grid is visible."
+)
+DIRECT_GOAL = DATE_GRID_STEP
 MONTH_NAMES = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"]
 MONTHS = {name: number for number, name in enumerate(MONTH_NAMES, 1)}
 CELL = re.compile(
@@ -52,7 +60,8 @@ class Window:
 
     @property
     def expected_pairs(self):
-        return [(d, r) for d in self.columns for r in self.rows if r > d]
+        # Google renders same-day returns too; they are stored but never in scope.
+        return [(d, r) for d in self.columns for r in self.rows if r >= d]
 
 
 @dataclass(frozen=True)
@@ -149,12 +158,13 @@ def _long(d):
 
 def goal(window):
     if window.mode == "direct":
-        return "Open the date grid and stop when prices for multiple dates are visible."
+        return DIRECT_GOAL
     w = window.watch
     return (
-        f"Show the date grid for round-trip flights from {w.origin_city} to {w.destination_city} "
+        f"Search round-trip flights from {w.origin_city} to {w.destination_city} "
         f"departing on {_long(window.anchor_depart)} and returning on {_long(window.anchor_return)}, "
-        "one adult in economy. Stop when the date grid with prices is visible. Do not select a flight."
+        "one adult in economy. In the calendar, click each date once, then Done, then Search. "
+        f"On the results page: {DATE_GRID_STEP} Do not select a flight."
     )
 
 

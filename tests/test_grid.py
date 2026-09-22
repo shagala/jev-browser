@@ -71,10 +71,11 @@ def test_window_geometry():
     w = grid.Window(watch(), date(2027, 3, 26), date(2027, 3, 27), "full")
     assert w.columns == [date(2027, 3, 23 + i) for i in range(7)]
     assert w.rows == [date(2027, 3, 24 + i) for i in range(7)]
-    assert all(r > d for d, r in w.expected_pairs)
+    assert all(r >= d for d, r in w.expected_pairs)
     assert (date(2027, 3, 23), date(2027, 3, 24)) in w.expected_pairs
+    assert (date(2027, 3, 24), date(2027, 3, 24)) in w.expected_pairs  # same-day return is a real Google cell
     assert (date(2027, 3, 29), date(2027, 3, 24)) not in w.expected_pairs
-    assert len(w.expected_pairs) == 28  # rows overlap columns; only r > d pairs
+    assert len(w.expected_pairs) == 34  # rows overlap columns; only r >= d pairs
 
 
 def test_every_in_scope_pair_is_covered_by_some_window():
@@ -137,7 +138,7 @@ def cell_actions(anchor_depart, anchor_return, columns, rows, price=700, skip=()
     actions = [{"id": "e1", "kind": "click", "role": "tab", "label": "Dates", "selected": "true"}]
     for d in columns:
         for r in rows:
-            if r <= d or (d, r) in skip:
+            if r < d or (d, r) in skip:
                 continue
             selected = ", selected" if (d, r) == (anchor_depart, anchor_return) else ""
             actions.append({"id": f"e{len(actions) + 1}", "kind": "click", "role": "button",
@@ -163,7 +164,8 @@ def test_start_url_and_goal_by_mode():
     )
     assert "Miami to Caracas" in grid.goal(full) and "March 26, 2027" in grid.goal(full)
     assert "April 2, 2027" in grid.goal(full) and "Do not select a flight" in grid.goal(full)
-    assert grid.goal(direct) == "Open the date grid and stop when prices for multiple dates are visible."
+    assert grid.DATE_GRID_STEP in grid.goal(full)
+    assert grid.goal(direct) == grid.DIRECT_GOAL and '"Date grid"' in grid.DIRECT_GOAL
 
 
 def test_verify_accepts_a_centred_grid():
@@ -219,6 +221,14 @@ def test_price_rows_cover_expected_pairs_with_null_for_missing():
     assert present["price_usd"] == 700 and present["in_scope"] is True and present["run_id"] == 7
     assert present["watch"] == "mia-ccs-spring" and present["origin"] == "MIA" and present["destination"] == "CCS"
     assert present["snapshot_date"] == date(2026, 9, 21)
+
+
+def test_price_rows_same_day_return_is_stored_but_out_of_scope():
+    w = grid.Window(watch(), date(2027, 3, 26), date(2027, 3, 27), "direct")  # clamped: rows overlap columns
+    cells, _ = grid.verify(good_page(w), w)
+    rows = grid.price_rows(w, cells, date(2026, 9, 21), run_id=1)
+    same_day = next(r for r in rows if r["depart_date"] == r["return_date"])
+    assert same_day["price_usd"] == 700 and same_day["in_scope"] is False
 
 
 def test_price_rows_flag_out_of_scope_pairs():

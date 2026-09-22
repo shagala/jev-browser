@@ -1,5 +1,6 @@
 """Offline contract for the run loop: a fake Agent and a fake DB stand in for Google, Jev, and Postgres."""
 
+from dataclasses import replace
 from datetime import date
 from unittest.mock import Mock
 
@@ -14,9 +15,10 @@ class FakeAgent:
 
     instances = []
 
-    def __init__(self, url, goal, *, page=None, status="done", error=None):
+    def __init__(self, url, goal, *, page=None, status="done", error=None, later=()):
         self.url, self.goal, self.closed = url, goal, False
         self._page, self._status, self._error = page, status, error
+        self.browser = Mock(observe=Mock(side_effect=list(later) or [page]))
         FakeAgent.instances.append(self)
 
     def run(self):
@@ -63,6 +65,27 @@ def test_ok_window_stores_rows_and_metrics(fake_db):
     assert agent.url == grid.start_url(w) and agent.goal == grid.goal(w) and agent.closed
 
 
+def test_done_before_cells_render_reobserves_until_they_appear(fake_db, monkeypatch):
+    monkeypatch.setattr(flights_grid, "SETTLE_INTERVAL", 0)
+    w = window()
+    ready = good_page(w)
+    empty = {**ready, "actions": ready["actions"][:1]}  # Dates tab selected, no cells yet
+    agent = factory(page=empty, later=[empty, ready])
+    result = flights_grid.run_window(Mock(), w, date(2026, 9, 21), agent_factory=agent)
+    assert result["status"] == "ok"
+    assert FakeAgent.instances[0].browser.observe.call_count == 2
+
+
+def test_done_with_cells_never_render_fails_after_settle_budget(fake_db, monkeypatch):
+    monkeypatch.setattr(flights_grid, "SETTLE_INTERVAL", 0)
+    w = window()
+    empty = {**good_page(w), "actions": good_page(w)["actions"][:1]}
+    agent = factory(page=empty, later=[empty] * flights_grid.SETTLE_ATTEMPTS)
+    result = flights_grid.run_window(Mock(), w, date(2026, 9, 21), agent_factory=agent)
+    assert result["status"] == "failed" and result["reason"] == "no grid cells parsed"
+    assert FakeAgent.instances[0].browser.observe.call_count == flights_grid.SETTLE_ATTEMPTS
+
+
 def test_failed_verification_records_reason_and_stores_nothing(fake_db):
     w = window()
     page = good_page(w)
@@ -98,7 +121,28 @@ def test_main_runs_selected_watches_and_exits_nonzero_on_failure(monkeypatch, ca
     out = capsys.readouterr().out
     assert code == 1
     assert "mia-ccs-nov" in out and "failed" in out and "title mismatch" in out
-    assert len(FakeAgent.instances) == 2  # the Nov watch tiles to two windows
+    assert len(FakeAgent.instances) == 3  # two windows, plus a direct-mode retry of the failed full run
+    assert [a.url == grid.HOME for a in FakeAgent.instances] == [True, False, False]
+
+
+def test_main_falls_back_to_direct_when_the_full_run_fails(monkeypatch, capsys):
+    monkeypatch.setattr(flights_grid, "load_environment", lambda: None)
+    monkeypatch.setattr(flights_grid.db, "connect", lambda: Mock())
+    monkeypatch.setattr(flights_grid.db, "ensure_schema", lambda conn: None)
+    nov = grid.windows(watch(name="mia-ccs-nov", start=date(2026, 11, 21), end=date(2026, 11, 28)))
+
+    def agent(url, goal):
+        if url == grid.HOME:
+            return FakeAgent(url, goal, page=good_page(nov[0]), status="blocked")
+        w = next(win for win in nov if grid.start_url(replace(win, mode="direct")) == url)
+        return FakeAgent(url, goal, page=good_page(w))
+
+    monkeypatch.setattr(flights_grid, "Agent", agent)
+    code = flights_grid.main(["--watch", "mia-ccs-nov", "--date", "2026-09-21"])
+    out = capsys.readouterr().out
+    assert code == 0 and "all windows ok" in out
+    assert "full   2026-11-24 → 2026-11-25  failed agent stopped with status 'blocked'" in out
+    assert "direct 2026-11-24 → 2026-11-25  ok" in out
 
 
 def test_main_returns_zero_when_every_window_verifies(monkeypatch, capsys):

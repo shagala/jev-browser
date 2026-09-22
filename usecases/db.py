@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS grid_runs (
   text_calls    integer,
   started_at    timestamptz NOT NULL DEFAULT now(),
   finished_at   timestamptz,
-  UNIQUE (snapshot_date, origin, destination, anchor_depart, anchor_return)
+  UNIQUE (snapshot_date, origin, destination, anchor_depart, anchor_return, mode)
 );
 CREATE TABLE IF NOT EXISTS flight_prices (
   snapshot_date date    NOT NULL,
@@ -45,8 +45,8 @@ START_RUN = """
 INSERT INTO grid_runs (snapshot_date, watch, origin, destination, anchor_depart, anchor_return, mode, status)
 VALUES (%(snapshot_date)s, %(watch)s, %(origin)s, %(destination)s, %(anchor_depart)s, %(anchor_return)s,
         %(mode)s, 'running')
-ON CONFLICT (snapshot_date, origin, destination, anchor_depart, anchor_return) DO UPDATE SET
-  watch = EXCLUDED.watch, mode = EXCLUDED.mode, status = 'running', reason = NULL, final_url = NULL,
+ON CONFLICT (snapshot_date, origin, destination, anchor_depart, anchor_return, mode) DO UPDATE SET
+  watch = EXCLUDED.watch, status = 'running', reason = NULL, final_url = NULL,
   elapsed_ms = NULL, jev_requests = NULL, text_calls = NULL, started_at = now(), finished_at = NULL
 RETURNING id
 """

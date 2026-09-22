@@ -5,6 +5,8 @@ uv run --env-file .env python -m usecases.flights_grid [--watch NAME ...] [--dat
 
 import argparse
 import sys
+import time
+from dataclasses import replace
 from datetime import date
 from pathlib import Path
 
@@ -14,6 +16,19 @@ from jev_ultrafast.demo import load_environment
 from . import db, grid
 
 WATCHES = Path(__file__).with_name("watches.json")
+SETTLE_ATTEMPTS, SETTLE_INTERVAL = 10, 0.3
+
+
+def settle(agent, page, window):
+    """Jev may accept DONE a beat before the grid's cells render; re-observe (read-only) until they do."""
+    cells, reason = grid.verify(page, window)
+    for _ in range(SETTLE_ATTEMPTS):
+        if reason != "no grid cells parsed":
+            break
+        time.sleep(SETTLE_INTERVAL)
+        page = agent.browser.observe(screenshot=False)
+        cells, reason = grid.verify(page, window)
+    return page, cells, reason
 
 
 def run_window(conn, window, snapshot_date, agent_factory=None):
@@ -35,7 +50,9 @@ def run_window(conn, window, snapshot_date, agent_factory=None):
             for _ in agent.run():
                 pass
             state = agent.snapshot()
-        page = state.get("page") or {}
+            page = state.get("page") or {}
+            if state["status"] == "done":
+                page, cells, reason = settle(agent, page, window)
         metrics = dict(
             final_url=page.get("url"),
             elapsed_ms=state["elapsed_ms"],
@@ -44,19 +61,26 @@ def run_window(conn, window, snapshot_date, agent_factory=None):
         )
         if state["status"] != "done":
             result["reason"] = f"agent stopped with status {state['status']!r}"
+        elif reason:
+            result["reason"] = reason
         else:
-            cells, reason = grid.verify(page, window)
-            if reason:
-                result["reason"] = reason
-            else:
-                rows = grid.price_rows(window, cells, snapshot_date, run_id)
-                db.upsert_prices(conn, rows)
-                prices = [r["price_usd"] for r in rows if r["in_scope"] and r["price_usd"] is not None]
-                result.update(status="ok", min_in_scope=min(prices) if prices else None)
+            rows = grid.price_rows(window, cells, snapshot_date, run_id)
+            db.upsert_prices(conn, rows)
+            prices = [r["price_usd"] for r in rows if r["in_scope"] and r["price_usd"] is not None]
+            result.update(status="ok", min_in_scope=min(prices) if prices else None)
     except Exception as error:  # One window must never end the day's run; the reason is stored.
         result["reason"] = str(error)
     db.finish_run(conn, run_id, status=result["status"], reason=result["reason"], **metrics)
     return result
+
+
+def report(watch, window, result):
+    price = f"min in-scope ${result['min_in_scope']}" if result["min_in_scope"] is not None else ""
+    note = result["reason"] or price
+    print(
+        f"{watch.name:16} {window.mode:6} {window.anchor_depart} → {window.anchor_return}  {result['status']:6} {note}",
+        flush=True,
+    )
 
 
 def main(argv=None):
@@ -78,14 +102,13 @@ def main(argv=None):
     for w in watches:
         for window in grid.windows(w):
             result = run_window(conn, window, args.date)
+            report(w, window, result)
+            if result["status"] != "ok" and window.mode == "full":
+                # The homepage run is the daily end-to-end test; a failure there must not lose the window's data.
+                window = replace(window, mode="direct")
+                result = run_window(conn, window, args.date)
+                report(w, window, result)
             failures += result["status"] != "ok"
-            price = f"min in-scope ${result['min_in_scope']}" if result["min_in_scope"] is not None else ""
-            note = result["reason"] or price
-            print(
-                f"{w.name:16} {window.mode:6} {window.anchor_depart} → {window.anchor_return}  "
-                f"{result['status']:6} {note}",
-                flush=True,
-            )
     print(f"{failures} failed window(s)" if failures else "all windows ok", flush=True)
     return 1 if failures else 0
 

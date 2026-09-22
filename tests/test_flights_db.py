@@ -64,7 +64,7 @@ def test_start_run_upserts_on_the_window_key_and_returns_id():
     kind, sql, params = conn.log[-1]
     assert kind == "execute"
     assert "INSERT INTO grid_runs" in sql
-    assert "ON CONFLICT (snapshot_date, origin, destination, anchor_depart, anchor_return) DO UPDATE" in sql
+    assert "ON CONFLICT (snapshot_date, origin, destination, anchor_depart, anchor_return, mode) DO UPDATE" in sql
     assert "status = 'running'" in sql and "RETURNING id" in sql
     assert params["mode"] == "full" and params["watch"] == "mia-ccs-spring"
     assert conn.commits == 1
