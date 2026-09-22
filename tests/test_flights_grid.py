@@ -121,8 +121,30 @@ def test_main_runs_selected_watches_and_exits_nonzero_on_failure(monkeypatch, ca
     out = capsys.readouterr().out
     assert code == 1
     assert "mia-ccs-nov" in out and "failed" in out and "title mismatch" in out
-    assert len(FakeAgent.instances) == 3  # two windows, plus a direct-mode retry of the failed full run
-    assert [a.url == grid.HOME for a in FakeAgent.instances] == [True, False, False]
+    assert len(FakeAgent.instances) == 4  # two windows, each retried once in direct mode
+    assert [a.url == grid.HOME for a in FakeAgent.instances] == [True, False, False, False]
+
+
+def test_main_retries_a_failed_direct_window_once(monkeypatch, capsys):
+    monkeypatch.setattr(flights_grid, "load_environment", lambda: None)
+    monkeypatch.setattr(flights_grid.db, "connect", lambda: Mock())
+    monkeypatch.setattr(flights_grid.db, "ensure_schema", lambda conn: None)
+    nov = grid.windows(watch(name="mia-ccs-nov", start=date(2026, 11, 21), end=date(2026, 11, 28)))
+    seen = []
+
+    def agent(url, goal):
+        direct = {grid.start_url(replace(win, mode="direct")): win for win in nov}
+        w = nov[0] if url == grid.HOME else direct[url]
+        seen.append(w.anchor_return)
+        # The second window's first attempt is blocked; its retry succeeds.
+        flaky = w is nov[1] and seen.count(w.anchor_return) == 1
+        return FakeAgent(url, goal, page=good_page(w), status="blocked" if flaky else "done")
+
+    monkeypatch.setattr(flights_grid, "Agent", agent)
+    code = flights_grid.main(["--watch", "mia-ccs-nov", "--date", "2026-09-21"])
+    out = capsys.readouterr().out
+    assert code == 0 and len(FakeAgent.instances) == 3
+    assert out.count("2026-11-24 → 2026-12-01") == 2 and "all windows ok" in out
 
 
 def test_main_falls_back_to_direct_when_the_full_run_fails(monkeypatch, capsys):

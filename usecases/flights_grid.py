@@ -103,8 +103,8 @@ def main(argv=None):
         for window in grid.windows(w):
             result = run_window(conn, window, args.date)
             report(w, window, result)
-            if result["status"] != "ok" and window.mode == "full":
-                # The homepage run is the daily end-to-end test; a failure there must not lose the window's data.
+            if result["status"] != "ok":
+                # One retry in direct mode: a flaky Jev run (or the daily homepage exercise) must not lose data.
                 window = replace(window, mode="direct")
                 result = run_window(conn, window, args.date)
                 report(w, window, result)
