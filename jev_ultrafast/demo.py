@@ -1,7 +1,6 @@
 """Loopback-only inspector for the Jev browser agent."""
 
 import atexit
-import base64
 import json
 import os
 import secrets
@@ -19,10 +18,6 @@ ORIGIN = f"http://127.0.0.1:{PORT}"
 TOKEN = secrets.token_urlsafe(32)
 LOCK = threading.Lock()
 AGENT = None
-# The Indeed ingest runs for minutes; it gets its own lock so it never blocks the inspector's own steps.
-INGEST_LOCK = threading.Lock()
-INGEST = {"running": False, "candidates": [], "failures": 0, "error": None, "dry_run": True}
-INGEST_FRAME = {"jpeg": None, "url": "", "title": ""}
 
 
 def load_environment():
@@ -72,55 +67,6 @@ def command(name, body):
     return response_state()
 
 
-def ingest_event(stage, name, detail):
-    if stage == "frame":
-        INGEST_FRAME.update(detail)
-        return
-    if stage == "listed":
-        INGEST["candidates"] = [{"name": n, "stage": "queued", "detail": ""} for n in detail]
-        return
-    if stage == "finished":
-        INGEST.update(running=False, failures=detail)
-        return
-    row = next((c for c in INGEST["candidates"] if c["name"] == name), None)
-    if row is None:
-        row = {"name": name, "stage": stage, "detail": ""}
-        INGEST["candidates"].append(row)
-    row.update(stage=stage, detail=str(detail))
-
-
-def start_ingest(body):
-    from usecases.indeed_resumes import process
-
-    list_url = (body.get("list_url") or "").strip()
-    if not list_url.startswith("https://employers.indeed.com/"):
-        raise ValueError("Enter an employers.indeed.com candidates URL")
-    if INGEST["running"] or not INGEST_LOCK.acquire(blocking=False):
-        raise ValueError("An ingest run is already in progress")
-    limit = body.get("limit")
-    INGEST.update(running=True, candidates=[], failures=0, error=None, dry_run=bool(body.get("dry_run", True)))
-    INGEST_FRAME.update(jpeg=None, url="", title="")
-
-    def worker():
-        try:
-            process(
-                list_url,
-                dry_run=INGEST["dry_run"],
-                limit=int(limit) if limit else None,
-                show=bool(body.get("show")),
-                live=bool(body.get("live")),
-                on_event=ingest_event,
-            )
-        except Exception as error:
-            INGEST.update(running=False, error=str(error))
-        finally:
-            INGEST["running"] = False
-            INGEST_LOCK.release()
-
-    threading.Thread(target=worker, daemon=True).start()
-    return dict(INGEST)
-
-
 class Handler(BaseHTTPRequestHandler):
     def send(self, status, content, mime="application/json"):
         content = content if isinstance(content, bytes) else content.encode()
@@ -139,13 +85,6 @@ class Handler(BaseHTTPRequestHandler):
         if path == "/api/state":
             with LOCK:
                 return self.send(200, json.dumps(response_state()))
-        if path == "/api/ingest/state":
-            frame = {k: INGEST_FRAME[k] for k in ("url", "title")}
-            return self.send(200, json.dumps({**INGEST, "frame": bool(INGEST_FRAME["jpeg"]), **frame}))
-        if path == "/api/ingest/frame":
-            if not INGEST_FRAME["jpeg"]:
-                return self.send(404, "No frame", "text/plain")
-            return self.send(200, base64.b64decode(INGEST_FRAME["jpeg"]), "image/jpeg")
         if path == "/demo.mp4":
             video = ROOT.parent / "docs" / "demo.mp4"
             if video.exists():
@@ -169,20 +108,13 @@ class Handler(BaseHTTPRequestHandler):
             or self.headers.get("Origin") not in (None, ORIGIN)
         ):
             return self.send(403, json.dumps({"error": "Local demo requests only"}))
-        length = int(self.headers.get("Content-Length", "0"))
-        if not 0 < length < 8192:
-            return self.send(400, json.dumps({"error": "Invalid request size"}))
-        raw = self.rfile.read(length)
-        if self.path == "/api/ingest/start":
-            # Handled outside LOCK: the run takes minutes and must not block the inspector.
-            try:
-                return self.send(200, json.dumps(start_ingest(json.loads(raw))))
-            except (ValueError, RuntimeError) as error:
-                return self.send(400, json.dumps({"error": str(error)}))
         if not LOCK.acquire(blocking=False):
             return self.send(409, json.dumps({"error": "A browser step is already running"}))
         try:
-            body = json.loads(raw)
+            length = int(self.headers.get("Content-Length", "0"))
+            if not 0 < length < 8192:
+                raise ValueError("Invalid request size")
+            body = json.loads(self.rfile.read(length))
             result = command(self.path.removeprefix("/api/"), body)
             self.send(200, json.dumps(result))
         except (ValueError, RuntimeError, TimeoutError) as error:
