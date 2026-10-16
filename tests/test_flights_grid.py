@@ -18,7 +18,11 @@ class FakeAgent:
     def __init__(self, url, goal, *, page=None, status="done", error=None, later=()):
         self.url, self.goal, self.closed = url, goal, False
         self._page, self._status, self._error = page, status, error
-        self.browser = Mock(observe=Mock(side_effect=list(later) or [page]))
+        # settle() re-observes until the grid holds, so the last page must repeat rather
+        # than exhaust: a StopIteration here would masquerade as a window failure.
+        remaining = list(later) or [page]
+        self.browser = Mock(observe=Mock(
+            side_effect=lambda *_a, **_k: remaining.pop(0) if len(remaining) > 1 else remaining[0]))
         FakeAgent.instances.append(self)
 
     def run(self):
@@ -36,6 +40,11 @@ class FakeAgent:
 
     def __exit__(self, *_):
         self.closed = True
+
+
+@pytest.fixture(autouse=True)
+def instant_settle(monkeypatch):
+    monkeypatch.setattr(flights_grid, "SETTLE_INTERVAL", 0)
 
 
 @pytest.fixture(autouse=True)
@@ -187,3 +196,45 @@ def test_main_rejects_unknown_watch(monkeypatch):
     monkeypatch.setattr(flights_grid, "load_environment", lambda: None)
     with pytest.raises(SystemExit):
         flights_grid.main(["--watch", "nope"])
+
+
+# --- recipe handlers -------------------------------------------------------------------
+
+
+def test_param_sets_cover_every_direct_window_and_no_agent_canary():
+    sets = flights_grid.param_sets()
+    assert sets and all(set(s) == {"watch", "origin", "destination", "depart", "ret"} for s in sets)
+    expected = [(w.name, win.anchor_depart.isoformat())
+                for w in grid.load_watches(flights_grid.WATCHES)
+                for win in grid.windows(w) if win.mode == "direct"]
+    assert [(s["watch"], s["depart"]) for s in sets] == expected
+
+
+def test_a_window_round_trips_through_its_params():
+    sets = flights_grid.param_sets()
+    rebuilt = flights_grid.window_for(sets[0])
+    assert rebuilt.watch.name == sets[0]["watch"]
+    assert rebuilt.anchor_depart.isoformat() == sets[0]["depart"]
+    assert rebuilt.mode == "replay"  # the ledger must tell a replay apart from an agent run
+
+
+def test_extract_waits_for_the_grid_to_render(monkeypatch):
+    monkeypatch.setattr(flights_grid, "SETTLE_INTERVAL", 0)
+    w = window()
+    empty = {"title": good_page(w)["title"], "url": "https://x", "actions": []}
+    pages = [empty, empty, good_page(w)]
+    browser = Mock(observe=Mock(side_effect=lambda *_a, **_k: pages.pop(0) if len(pages) > 1 else pages[0]))
+    params = {"watch": w.watch.name, "origin": w.watch.origin, "destination": w.watch.destination,
+              "depart": w.anchor_depart.isoformat(), "ret": w.anchor_return.isoformat()}
+    cells, problem = flights_grid.extract(browser, params)
+    assert problem is None and cells
+
+
+def test_store_writes_one_run_row_per_replay(fake_db):
+    w = window()
+    params = {"watch": w.watch.name, "origin": w.watch.origin, "destination": w.watch.destination,
+              "depart": w.anchor_depart.isoformat(), "ret": w.anchor_return.isoformat()}
+    cells, _ = grid.verify(good_page(w), flights_grid.window_for(params))
+    detail = flights_grid.store(cells, params, snapshot_date=date(2026, 9, 21), conn=Mock())
+    assert fake_db["start"][0]["mode"] == "replay" and fake_db["finish"][0][1]["status"] == "ok"
+    assert detail["rows"] == len(fake_db["prices"][0]) and detail["min_in_scope"] == 700

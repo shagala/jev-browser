@@ -1,0 +1,49 @@
+{
+  "name": "flights-date-grid",
+  "start": {
+    "url": "https://www.google.com/travel/flights?hl=en&curr=USD&q=Flights%20from%20{origin}%20to%20{destination}%20on%20{depart}%20through%20{ret}"
+  },
+  "steps": [
+    {
+      "id": "s1",
+      "intent": "Date grid",
+      "op": "CLICK",
+      "match": {
+        "kind": "click",
+        "role": "button",
+        "label": "Date grid",
+        "mode": "normalized",
+        "ordinal": 0,
+        "expected_candidates": 1
+      },
+      "mutating": true,
+      "expect": {
+        "poll": {
+          "attempts": 10,
+          "interval_ms": 300
+        },
+        "require_page_changed": true
+      }
+    }
+  ],
+  "provenance": {
+    "goal": "Click the button named \"Date grid\" (next to \"Price graph\", below the flight results) to open the grid of round-trip prices with departure dates as columns and return dates as rows. That button is often below the visible area: scroll down until it appears, then click it. Do not open the Departure or Return date fields or the calendar. Stop when that price grid is visible.",
+    "recorded_at": "2026-10-16T11:11:59+00:00",
+    "model": "jev-1.13.0",
+    "source_hashes": {
+      "snapshot.js": "e50473501c8fb8e7",
+      "browser.py": "ee08dafa93d731bd",
+      "model.py": "8c84455087d54595",
+      "agent.py": "aaf8b271cb0ee664"
+    }
+  },
+  "version": 1,
+  "schedule": "daily@07:00",
+  "params_from": "usecases.flights_grid:param_sets",
+  "extract": {
+    "handler": "usecases.flights_grid:extract"
+  },
+  "store": {
+    "handler": "usecases.flights_grid:store"
+  }
+}

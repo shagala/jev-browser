@@ -13,6 +13,12 @@ PROVENANCE = {"goal": "Open the date grid", "recorded_at": "2026-10-15T09:00:00Z
 
 
 @pytest.fixture(autouse=True)
+def instant(monkeypatch):
+    from usecases import player
+    monkeypatch.setattr(player, "FIND_INTERVAL", 0)
+
+
+@pytest.fixture(autouse=True)
 def no_paid_calls(monkeypatch):
     """Mechanical proof that replay never reaches a model provider."""
     def forbidden(*_args, **_kwargs):
@@ -161,6 +167,68 @@ def test_an_unsafe_failure_is_never_repaired(tmp_path):
                             browser_factory=lambda url: acted, root=tmp_path)
     assert result["status"] == "failed" and result["failure"] == "expect"
     assert not list(tmp_path.glob("*.json"))
+
+
+# --- fanning out and the terminal verifier -------------------------------------------
+
+SETS = [{"origin": "MIA", "n": 1}, {"origin": "MAD", "n": 2}]
+
+
+@pytest.fixture
+def wired(monkeypatch):
+    """Stand in for the catalog's handlers; handlers.resolve has its own contract tests."""
+    stored = []
+
+    def store(records, _params):
+        stored.append(list(records))
+        return {"rows": len(records)}
+
+    table = {"sets": lambda: SETS,
+             "good": lambda _browser, _params: (["a", "b"], None),
+             "bad": lambda _browser, _params: ([], "Dates tab not selected"),
+             "store": store}
+    monkeypatch.setattr(run.handlers, "resolve", lambda reference: table[reference])
+    return stored
+
+
+def test_without_a_provider_a_recipe_runs_once_from_the_overrides():
+    assert run.param_sets(recipe(), {"origin": "MIA"}) == [{"origin": "MIA"}]
+
+
+def test_a_provider_fans_the_recipe_out_over_its_work(wired):
+    assert run.param_sets(recipe(params_from="sets"), {}) == SETS
+
+
+def test_overrides_filter_the_provider_instead_of_replacing_it(wired):
+    assert run.param_sets(recipe(params_from="sets"), {"origin": "MAD"}) == [SETS[1]]
+
+
+def test_a_filter_matching_nothing_is_an_error(wired):
+    with pytest.raises(ValueError, match="no parameter set matches"):
+        run.param_sets(recipe(params_from="sets"), {"origin": "LHR"})
+
+
+def test_the_verifier_runs_after_replay_and_gates_the_store(wired):
+    item = recipe(extract={"handler": "good"}, store={"handler": "store"})
+    result = run.run_recipe(item, {"origin": "MIA"}, browser_factory=FakeBrowser)
+    assert result["status"] == "ok" and result["detail"] == {"rows": 2}
+    assert wired == [["a", "b"]]
+
+
+def test_a_failed_verifier_stores_nothing_and_is_never_repaired(wired, tmp_path):
+    # Replay reporting ok is not evidence; the code-owned verifier is the authority.
+    item = recipe(extract={"handler": "bad"}, store={"handler": "store"})
+    result = run.run_recipe(item, {"origin": "MIA"}, browser_factory=FakeBrowser, root=tmp_path)
+    assert result["status"] == "failed" and result["failure"] == "verify"
+    assert result["repairable"] is False and wired == []
+    assert not list(tmp_path.glob("*.json"))  # a verify failure never rewrites the recipe
+
+
+def test_a_broken_step_never_reaches_the_verifier(wired):
+    item = recipe(extract={"handler": "bad"}, store={"handler": "store"})
+    missing = FakeBrowser("u", pages=[page(action(label="Price graph"))])
+    result = run.run_recipe(item, {"origin": "MIA"}, repair=False, browser_factory=lambda url: missing)
+    assert result["failure"] == "no_match" and wired == []
 
 
 def test_the_ledger_round_trips(tmp_path):
