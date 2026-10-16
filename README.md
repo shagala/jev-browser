@@ -93,7 +93,8 @@ uv run --env-file .env python examples/run.py \
 
 ## Use cases (this fork)
 
-- **Flights date-grid tracker** — daily round-trip price snapshots for the watches in `usecases/watches.json`, stored in Postgres. `uv run --env-file .env python -m usecases.flights_grid`. See [docs/flights-grid.md](docs/flights-grid.md).
+- **Recipe catalog** — a web task recorded once from a natural-language goal, then replayed with **zero model calls** and re-recorded by the agent when the site moves. `uv run --env-file .env python -m usecases.run list | run <name> | due`. One launchd job runs whatever is due, and the inspector shows the replay step by step. See [docs/recipes.md](docs/recipes.md).
+- **Flights date-grid tracker** — daily round-trip price snapshots for the watches in `usecases/watches.json`, stored in Postgres. The navigation is a recipe; the tiling, the verifier and the store stay code. `uv run --env-file .env python -m usecases.flights_grid`. See [docs/flights-grid.md](docs/flights-grid.md).
 
 ## Why it moves
 

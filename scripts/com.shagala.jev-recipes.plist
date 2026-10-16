@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- One job for the whole catalog: `run due` decides what to run from each recipe's own
+     schedule plus artifacts/runs.jsonl, so adding a recipe never means touching launchd.
+     Ticking hourly is what lets a daily recipe that failed (or repaired) at 07:00 finish
+     its work at 08:00 instead of waiting a day. -->
+<plist version="1.0"><dict>
+  <key>Label</key><string>com.shagala.jev-recipes</string>
+  <key>ProgramArguments</key><array>
+    <string>/Users/shagala/.pyenv/versions/3.11.9/bin/uv</string>
+    <string>run</string><string>--env-file</string><string>.env</string>
+    <string>python</string><string>-m</string><string>usecases.run</string><string>due</string>
+  </array>
+  <key>WorkingDirectory</key><string>/Users/shagala/Documents/Projects/jev-ultrafast</string>
+  <key>StartCalendarInterval</key><dict><key>Minute</key><integer>5</integer></dict>
+  <key>StandardOutPath</key><string>/Users/shagala/Documents/Projects/jev-ultrafast/artifacts/recipes/out.log</string>
+  <key>StandardErrorPath</key><string>/Users/shagala/Documents/Projects/jev-ultrafast/artifacts/recipes/err.log</string>
+</dict></plist>
