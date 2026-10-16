@@ -20,7 +20,7 @@ from pathlib import Path
 from jev_ultrafast import Agent, Browser
 from jev_ultrafast.demo import load_environment
 
-from . import player, recorder
+from . import handlers, player, recorder
 from . import recipe as recipes
 
 LEDGER = Path("artifacts/runs.jsonl")
@@ -61,12 +61,35 @@ def is_due(recipe, entries, now=None):
     raise ValueError(f"{recipe.name}: unknown schedule {schedule!r}")
 
 
-def params_for(recipe, overrides):
-    params = dict(overrides)
-    if recipe.params_from:
-        source = Path(__file__).with_name(recipe.params_from)
-        params = {**json.loads(source.read_text()), **params}
-    return params
+def param_sets(recipe, overrides):
+    """A recipe is one navigation; `params_from` fans it out over the work it applies to.
+
+    With no provider there is a single run from the overrides. With one, the overrides
+    become a filter, so `--param watch=mia-ccs-nov` reruns exactly that window.
+    """
+    if not recipe.params_from:
+        return [dict(overrides)]
+    sets = [s for s in handlers.resolve(recipe.params_from)()
+            if all(str(s.get(key)) == value for key, value in overrides.items())]
+    if not sets:
+        raise ValueError(f"{recipe.name}: no parameter set matches {overrides}")
+    return sets
+
+
+def finish(recipe, browser, params, emit):
+    """Hand the outcome to code the recipe cannot rewrite, and store only if it passes."""
+    records, problem = handlers.resolve(recipe.extract["handler"])(browser, params)
+    if problem:
+        emit("verify", None, problem)
+        # The step already clicked, so a re-record would repeat it. A human reads this one.
+        return {"status": "failed", "step": None, "failure": "verify",
+                "reason": problem, "repairable": False, "detail": None}
+    emit("verified", None, f"{len(records)} record(s)")
+    detail = handlers.resolve(recipe.store["handler"])(records, params) if recipe.store else None
+    if detail is not None:
+        emit("stored", None, str(detail))
+    return {"status": "ok", "step": None, "failure": None, "reason": None,
+            "repairable": False, "detail": detail}
 
 
 def run_recipe(recipe, params, *, repair=True, on_event=None, browser_factory=Browser,
@@ -77,6 +100,8 @@ def run_recipe(recipe, params, *, repair=True, on_event=None, browser_factory=Br
     browser = browser_factory(url)
     try:
         result = player.replay(browser, recipe, params, on_event=emit)
+        if result["status"] == "ok" and recipe.extract:
+            result = finish(recipe, browser, params, emit)
     finally:
         browser.close()
     if result["status"] == "ok" or not result["repairable"]:
@@ -117,6 +142,12 @@ def main(argv=None):
     new.add_argument("--goal", required=True)
     new.add_argument("--url", required=True)
     new.add_argument("--schedule")
+    new.add_argument("--params-from", metavar="MODULE:FUNCTION",
+                     help="callable returning the parameter sets this recipe fans out over")
+    new.add_argument("--extract", metavar="MODULE:FUNCTION",
+                     help="terminal verifier: (browser, params) -> (records, problem)")
+    new.add_argument("--store", metavar="MODULE:FUNCTION",
+                     help="persist verified records: (records, params) -> detail")
     new.add_argument("--param", action="append", default=[], metavar="KEY=VALUE")
     play = sub.add_parser("run")
     play.add_argument("name")
@@ -133,8 +164,15 @@ def main(argv=None):
         return 0
 
     if args.command == "record":
+        wiring = {key: value for key, value in
+                  (("params_from", args.params_from),
+                   ("extract", {"handler": args.extract} if args.extract else None),
+                   ("store", {"handler": args.store} if args.store else None)) if value}
+        for reference in filter(None, [args.params_from, args.extract, args.store]):
+            handlers.resolve(reference)  # fail now, not at 07:00 tomorrow
         made = recorder.record(args.name, args.goal, args.url, schedule=args.schedule,
-                               params=dict(p.split("=", 1) for p in args.param), on_event=report)
+                               params=dict(p.split("=", 1) for p in args.param), on_event=report,
+                               **wiring)
         path = recipes.save(made)
         print(f"recorded {len(made.steps)} step(s) → {path}", flush=True)
         return 0
@@ -148,13 +186,24 @@ def main(argv=None):
     failures = 0
     print(f"{len(selected)} recipe(s) to run", flush=True)
     for item in selected:
-        print(f"{item.name} v{item.version}", flush=True)
-        result = run_recipe(item, params_for(item, overrides), repair=not args.no_repair, on_event=report)
-        failures += result["status"] == "failed"
+        sets = param_sets(item, overrides)
+        print(f"{item.name} v{item.version}  {len(sets)} parameter set(s)", flush=True)
+        broken, version = 0, item.version
+        for params in sets:
+            label = " ".join(f"{k}={v}" for k, v in params.items())
+            print(f"  [{label}]", flush=True)
+            result = run_recipe(item, params, repair=not args.no_repair, on_event=report)
+            # A repair rewrites the recipe mid-fan-out; the rest of the sets use the new one.
+            item, version = result["recipe"], result["recipe"].version
+            broken += result["status"] == "failed"
+            print(f"  → {result['status']}" + (f" ({result['reason']})" if result["reason"] else ""),
+                  flush=True)
+        failures += broken
+        # One ledger entry per recipe: scheduling asks "did this recipe do its work today?",
+        # and a partial failure must leave it due.
         record_run({"recipe": item.name, "at": datetime.now(timezone.utc).astimezone().isoformat(),
-                    "status": result["status"], "failure": result["failure"],
-                    "version": result["recipe"].version})
-        print(f"  → {result['status']}" + (f" ({result['reason']})" if result["reason"] else ""), flush=True)
+                    "status": "failed" if broken else "ok", "failure": broken or None,
+                    "sets": len(sets), "version": version})
     return 1 if failures else 0
 
 

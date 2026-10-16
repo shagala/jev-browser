@@ -18,18 +18,16 @@ from jev_ultrafast.browser import StalePage
 from . import match as m
 
 SCROLL_ATTEMPTS = 6
+# A first step observes the moment the tab opens, with nothing before it to have waited.
+FIND_ATTEMPTS, FIND_INTERVAL = 6, 0.5
 
 
 def _scroll(page, direction):
     return next((a for a in page["actions"] if a["id"] == f"scroll_{direction}"), None)
 
 
-def find(browser, page, descriptor, *, attempts=SCROLL_ATTEMPTS):
-    """Resolve a descriptor, scrolling to bring off-screen elements into the observation.
-
-    Returns (action, page) — the caller must hand `Browser.act` the same page the action
-    came from, since `fresh()` reads `page["guards"][str(node)]`.
-    """
+def _scan(browser, page, descriptor, attempts):
+    """One sweep of the viewport: match, scroll down, match, scroll back up, match."""
     for direction in ("down", "up"):
         current, used = page, 0
         while True:
@@ -40,10 +38,40 @@ def find(browser, page, descriptor, *, attempts=SCROLL_ATTEMPTS):
             scroll = _scroll(current, direction)
             if scroll is None or used >= attempts:
                 break
-            browser.act(scroll, current)
+            try:
+                browser.act(scroll, current)
+            except StalePage:
+                # The page re-rendered mid-ladder. Scrolling mutates no site state, so
+                # re-observe and spend the rung instead of failing the step.
+                pass
             current = browser.observe(screenshot=False)
             used += 1
     return m.resolve(page, descriptor), page  # re-raises the original failure class
+
+
+def find(browser, page, descriptor, *, attempts=SCROLL_ATTEMPTS, waits=None, interval=None):
+    """Resolve a descriptor against the live page.
+
+    An element can be missing for two reasons: it is outside the viewport, so snapshot.js
+    never reported it, or it has not rendered yet. Scrolling answers the first and waiting
+    answers the second, and only when both are spent is it really absent. A match on the
+    first look costs neither.
+
+    Returns (action, page) — the caller must hand `Browser.act` the same page the action
+    came from, since `fresh()` reads `page["guards"][str(node)]`.
+    """
+    # Read the budget at call time so a test can collapse the waiting.
+    waits = FIND_ATTEMPTS if waits is None else waits
+    interval = FIND_INTERVAL if interval is None else interval
+    for attempt in range(max(waits, 1)):
+        if attempt:
+            time.sleep(interval)
+            page = browser.observe(screenshot=False)
+        try:
+            return _scan(browser, page, descriptor, attempts)
+        except m.NoMatch as error:
+            missing = error  # Ambiguity is a shape change; waiting will not resolve it.
+    raise missing
 
 
 def holds(page, assertion):
@@ -112,6 +140,9 @@ def replay(browser, recipe, params, *, on_event=None):
             action, page = find(browser, page, step.match)
         except m.MatchError as error:
             return _failed(emit, step, error.kind, str(error), repairable=True)
+        except StalePage as error:
+            # Searching dispatched nothing but a scroll, so the step is safe to re-derive.
+            return _failed(emit, step, "stale_pre", str(error), repairable=True)
         emit("matched", step.id, action["label"])
         if step.value_from:
             text = params[step.value_from["param"]]

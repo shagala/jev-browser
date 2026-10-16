@@ -10,6 +10,12 @@ from usecases.recipe import Match, Recipe, Step
 PROVENANCE = {"goal": "Open the date grid", "recorded_at": "2026-10-15T09:00:00Z", "model": "jev-1.14.0"}
 
 
+@pytest.fixture(autouse=True)
+def instant(monkeypatch):
+    """The waiting is budgeted in wall time; the tests are about what it does, not how long."""
+    monkeypatch.setattr(player, "FIND_INTERVAL", 0)
+
+
 def action(**kw):
     base = {"id": "e1", "kind": "click", "role": "button", "label": "Go", "node": 1, "value": ""}
     return {**base, **kw}
@@ -83,10 +89,30 @@ def test_finds_an_element_that_is_below_the_fold():
 
 def test_gives_up_after_the_scroll_budget_and_reports_no_match():
     nothing = page(action(label="Price graph"), y=0, height=9000)
-    browser = FakeBrowser([nothing] * 20)
+    browser = FakeBrowser([nothing] * 60)
     with pytest.raises(m.NoMatch):
-        player.find(browser, nothing, Match(kind="click", role="button", label="Date grid"), attempts=3)
-    assert len(browser.acted) == 3
+        player.find(browser, nothing, Match(kind="click", role="button", label="Date grid"),
+                    attempts=3, waits=2)
+    # Three rungs down per wait. These pages report y=0, so there is never a scroll_up
+    # rung to take; the point is that the budget is bounded and the loop terminates.
+    assert len(browser.acted) == 3 * 2
+
+
+def test_waits_for_an_element_that_has_not_rendered_yet():
+    # The first step observes the instant the tab opens, with nothing before it to have waited.
+    blank = page(y=0, height=700)
+    ready = page(action(label="Date grid"), y=0, height=700)
+    browser = FakeBrowser([blank, blank, ready])
+    found, _ = player.find(browser, blank, Match(kind="click", role="button", label="Date grid"))
+    assert found["label"] == "Date grid"
+    assert browser.acted == []  # nothing to scroll: it was a render race, not a position
+
+
+def test_a_match_on_the_first_look_never_waits(monkeypatch):
+    monkeypatch.setattr(player.time, "sleep", lambda _s: pytest.fail("replay must not idle"))
+    ready = page(action(label="Date grid"), y=0, height=700)
+    found, _ = player.find(FakeBrowser([ready]), ready, Match(kind="click", role="button", label="Date grid"))
+    assert found["label"] == "Date grid"
 
 
 def test_does_not_scroll_when_the_page_cannot_scroll():
@@ -95,6 +121,23 @@ def test_does_not_scroll_when_the_page_cannot_scroll():
     with pytest.raises(m.NoMatch):
         player.find(browser, short, Match(kind="click", role="button", label="Date grid"))
     assert browser.acted == []
+
+
+def test_a_re_render_mid_ladder_does_not_fail_the_step():
+    # Live regression: Google Flights re-renders under the ladder, so the scroll it was
+    # about to execute is stale. Scrolling mutates no site state — re-observe and go on.
+    above = page(action(label="Price graph"), y=0, height=2000)
+    below = page(action(label="Date grid"), y=560, height=2000)
+    browser = FakeBrowser([below], act_effects=[StalePage("Page changed since this decision.")])
+    found, _ = player.find(browser, above, Match(kind="click", role="button", label="Date grid"))
+    assert found["label"] == "Date grid"
+
+
+def test_a_stale_ladder_that_never_recovers_is_a_repairable_failure():
+    nothing = page(action(label="Price graph"), y=0, height=9000)
+    browser = FakeBrowser([nothing] * 20, act_effects=[StalePage("changed")] * 20)
+    with pytest.raises(m.NoMatch):
+        player.find(browser, nothing, Match(kind="click", role="button", label="Date grid"), attempts=2)
 
 
 def test_ambiguity_is_not_retried_by_scrolling():
@@ -163,6 +206,18 @@ def test_a_stale_page_before_dispatch_is_repairable():
     result = player.replay(browser, recipe(step()), params={})
     assert result["status"] == "failed" and result["repairable"] is True
     assert result["failure"] == "stale_pre"
+
+
+def test_a_stale_page_raised_while_searching_is_repairable(monkeypatch):
+    # Nothing but a scroll was dispatched, so the step is still safe to re-derive.
+    ready = page(action(label="Date grid"))
+
+    def stale(*_args, **_kwargs):
+        raise StalePage("Page changed since this decision")
+
+    monkeypatch.setattr(player, "find", stale)
+    result = player.replay(FakeBrowser([ready] * 3), recipe(step()), params={})
+    assert result["failure"] == "stale_pre" and result["repairable"] is True
 
 
 def test_an_unconfirmed_mutation_is_never_repairable():
