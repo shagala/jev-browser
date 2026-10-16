@@ -150,12 +150,18 @@ $("task-form").addEventListener("submit", (event) => {
   automatic = false;
   perform(
     () =>
-      call("reset", { scenario: $("scenario").value, goal: $("goal").value }),
+      call("reset", {
+        scenario: $("scenario").value,
+        goal: $("goal").value,
+        url: $("url").value,
+      }),
     "Opening a fresh browser…",
   );
 });
 $("scenario").addEventListener("change", () => {
-  $("goal").value = goals[$("scenario").value];
+  const custom = $("scenario").value === "custom";
+  $("custom-url").hidden = !custom;
+  if (!custom) $("goal").value = goals[$("scenario").value];
 });
 $("choose").addEventListener("click", () =>
   perform(() => call("predict"), "Jev is comparing the actions…"),
@@ -242,3 +248,122 @@ fetch("/api/state")
   .catch(() => {
     $("status").textContent = "Cannot reach local demo server";
   });
+
+// --- the recipe catalog ----------------------------------------------------------------
+// Replay makes no decisions, so the panels above have nothing to show for it. Its view is
+// the step ladder: what each step looked for, whether it acted, and what came back.
+let recipePoll = null;
+
+function recipeRow(recipe) {
+  const last = recipe.last_ok
+    ? `last ok ${escape(recipe.last_ok.replace("T", " ").slice(0, 16))}`
+    : "never run";
+  const steps = recipe.steps
+    .map((s) => `<li><code>${escape(s.id)}</code> ${escape(s.op)} · ${escape(s.label ?? s.intent)}</li>`)
+    .join("");
+  return `<article class="recipe" data-recipe="${escape(recipe.name)}">
+      <div class="recipe-head">
+        <h3>${escape(recipe.name)} <span>v${recipe.version}</span></h3>
+        <div class="recipe-actions">
+          <button type="button" data-run="replay">Replay</button>
+          <button type="button" data-run="run">Run with repair</button>
+        </div>
+      </div>
+      <p class="recipe-meta">${escape(recipe.schedule)} · ${recipe.steps.length} step(s) · ${escape(last)}${
+        recipe.fans_out ? " · fans out" : ""
+      }</p>
+      <ol class="recipe-steps">${steps}</ol>
+      <details class="recipe-goal"><summary>Recorded from this goal</summary><p>${escape(
+        recipe.goal,
+      )}</p></details>
+    </article>`;
+}
+
+async function loadRecipes() {
+  let data;
+  try {
+    data = await fetch("/api/recipes").then((r) => r.json());
+  } catch {
+    return;
+  }
+  if (!data.available) {
+    $("recipe-count").textContent = "unavailable";
+    $("recipe-note").textContent = `No catalog here: ${data.reason}`;
+    return;
+  }
+  $("recipe-count").textContent = `${data.recipes.length} recorded`;
+  $("recipe-list").innerHTML =
+    data.recipes.map(recipeRow).join("") ||
+    `<p class="muted">Nothing recorded yet. Use <code>python -m usecases.run record</code>.</p>`;
+}
+
+function renderRecipeRun(run) {
+  $("recipe-trace").hidden = false;
+  $("recipe-status").textContent = run.running
+    ? `${run.recipe} · running`
+    : `${run.recipe} · ${run.status}`;
+  $("ladder").querySelector("tbody").innerHTML = run.events
+    .map(
+      (e) =>
+        `<tr class="stage-${escape(e.stage)}"><td>${escape(e.stage)}</td><td>${escape(
+          e.step ?? "",
+        )}</td><td>${escape(e.detail)}</td></tr>`,
+    )
+    .join("");
+  $("recipe-results").innerHTML = run.results
+    .map(
+      (r) =>
+        `<div class="recipe-result ${r.status}"><strong>${escape(r.status)}</strong> ${escape(
+          Object.entries(r.params)
+            .map(([k, v]) => `${k}=${v}`)
+            .join(" "),
+        )} · ${r.ms} ms${r.reason ? ` · ${escape(r.reason)}` : ""}</div>`,
+    )
+    .join("");
+  const rows = $("ladder").querySelectorAll("tbody tr");
+  if (rows.length) rows[rows.length - 1].scrollIntoView({ block: "nearest" });
+}
+
+async function pollRecipeRun() {
+  const run = await fetch("/api/recipes/state").then((r) => r.json());
+  renderRecipeRun(run);
+  if (!run.running) {
+    clearInterval(recipePoll);
+    recipePoll = null;
+    document.querySelectorAll("[data-run]").forEach((b) => (b.disabled = false));
+    loadRecipes();
+  }
+}
+
+$("recipe-list").addEventListener("click", async (event) => {
+  const button = event.target.closest("[data-run]");
+  if (!button || recipePoll) return;
+  const name = button.closest("[data-recipe]").dataset.recipe;
+  document.querySelectorAll("[data-run]").forEach((b) => (b.disabled = true));
+  $("error").hidden = true;
+  try {
+    const response = await fetch("/api/recipes/run", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "X-Demo-Token": token },
+      body: JSON.stringify({ name, mode: button.dataset.run }),
+    });
+    const data = await response.json();
+    if (!response.ok) throw Error(data.error || "Request failed");
+    renderRecipeRun(data);
+    recipePoll = setInterval(pollRecipeRun, 500);
+  } catch (error) {
+    document.querySelectorAll("[data-run]").forEach((b) => (b.disabled = false));
+    $("error").textContent = error.message;
+    $("error").hidden = false;
+  }
+});
+
+loadRecipes();
+fetch("/api/recipes/state")
+  .then((r) => r.json())
+  .then((run) => {
+    if (run.status === "idle") return;
+    renderRecipeRun(run);
+    if (run.running) recipePoll = setInterval(pollRecipeRun, 500);
+  })
+  .catch(() => {});

@@ -34,7 +34,17 @@
             <option value="flights">Google Flights · real web</option>
             <option value="travel">Travel planner · fixture</option>
             <option value="research">Reading room · fixture</option>
+            <option value="custom">Any URL…</option>
           </select>
+        </div>
+        <div class="task-row custom-url" id="custom-url" hidden>
+          <input
+            id="url"
+            name="url"
+            type="url"
+            placeholder="https://example.com/page-to-drive"
+            aria-label="Start URL"
+          />
         </div>
         <div class="task-row">
           <textarea id="goal" name="goal" rows="5">
@@ -127,6 +137,27 @@ Find one-way flights from Zurich to London on September 20, 2026, for one adult 
         </div>
         <div id="history">
           <p class="muted">Each executed action leaves an observed result.</p>
+        </div>
+      </section>
+      <section class="recipes" id="recipes">
+        <div class="trace-heading">
+          <h2>Recipes <span id="recipe-count">loading…</span></h2>
+          <span class="aside-note" id="recipe-note">
+            Recorded once, replayed with no model calls.
+          </span>
+        </div>
+        <div id="recipe-list"></div>
+        <div id="recipe-trace" hidden>
+          <p class="distribution-label">
+            Replay trace <span id="recipe-status">idle</span>
+          </p>
+          <table class="ladder" id="ladder">
+            <thead>
+              <tr><th>Stage</th><th>Step</th><th>Detail</th></tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+          <div id="recipe-results"></div>
         </div>
       </section>
       <details>
