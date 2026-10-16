@@ -88,11 +88,16 @@ def chain_expectations(steps):
     return chained
 
 
-def record(name, goal, start_url, *, agent_factory=Agent, schedule=None, on_event=None, **extra):
-    """Run the agent once and keep what it did. The NL goal stays the source of truth."""
+def record(name, goal, start_url, *, params=None, agent_factory=Agent, schedule=None,
+           on_event=None, **extra):
+    """Run the agent once and keep what it did. The NL goal stays the source of truth.
+
+    `start_url` is stored as written so one recipe serves every parameter set; the
+    recording itself navigates to it filled in with `params`.
+    """
     emit = on_event or (lambda *_args: None)
     steps, seen, model = [], 0, None
-    with agent_factory(start_url, goal) as agent:
+    with agent_factory(start_url.format(**(params or {})), goal) as agent:
         previous = agent.snapshot()["page"]
         for state in agent.run():
             history = state["history"]

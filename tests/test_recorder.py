@@ -139,3 +139,18 @@ def test_provenance_carries_the_goal_and_source_hashes():
     assert recipe.provenance["goal"] == goal
     assert recipe.provenance["model"] == "jev-1.14.0"
     assert "snapshot.js" in recipe.provenance["source_hashes"]
+
+
+def test_the_url_template_is_stored_while_a_filled_url_is_visited():
+    # One recipe must serve every route; the recording visits one of them.
+    first = page(action(id="e1", label="Date grid"))
+    visited = []
+
+    def factory(url, goal):
+        visited.append(url)
+        return FakeAgent(url, goal, pages=[first, first], entries=[entry("e1", "Date grid")])
+
+    template = "https://example.test/?from={origin}"
+    recipe = recorder.record("demo", "goal", template, params={"origin": "MIA"}, agent_factory=factory)
+    assert visited == ["https://example.test/?from=MIA"]
+    assert recipe.start["url"] == template

@@ -117,6 +117,7 @@ def main(argv=None):
     new.add_argument("--goal", required=True)
     new.add_argument("--url", required=True)
     new.add_argument("--schedule")
+    new.add_argument("--param", action="append", default=[], metavar="KEY=VALUE")
     play = sub.add_parser("run")
     play.add_argument("name")
     play.add_argument("--no-repair", action="store_true")
@@ -132,7 +133,8 @@ def main(argv=None):
         return 0
 
     if args.command == "record":
-        made = recorder.record(args.name, args.goal, args.url, schedule=args.schedule, on_event=report)
+        made = recorder.record(args.name, args.goal, args.url, schedule=args.schedule,
+                               params=dict(p.split("=", 1) for p in args.param), on_event=report)
         path = recipes.save(made)
         print(f"recorded {len(made.steps)} step(s) → {path}", flush=True)
         return 0
