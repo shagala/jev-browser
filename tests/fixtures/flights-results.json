@@ -1,0 +1,2112 @@
+{
+  "url": "https://www.google.com/travel/flights?hl=en&curr=USD&q=Flights%20from%20MIA%20to%20CCS%20on%202026-11-24%20through%202026-12-01",
+  "title": "Miami to Caracas | Google Flights",
+  "w": 1280,
+  "h": 780,
+  "text": "Skip to main content\nAccessibility feedback\nExplore\nFlights\nHotels\nVacation rentals\nFlight search\n1\nFilters\nAll filters\nStops\nAirlines\nBags\nPrice\nTimes\nEmissions\nConnecting airports\nDuration\nSearch results\n7 results returned.\nBest\nCheapest\nfrom\n$734\nTop departing flights\nRanked based on price and convenience\nPrices include required taxes + fees for 1 adult.\nOptional charges and\nbag fees\nmay apply.\nPassenger assistance\ninfo.\nSorted by top flights\n10:10 AM\n–\n2:36 PM\nAmerican\n3 hr 26 min\nNonstop\n$815\nround trip\n7:30 AM\n–\n11:45 AM\nLASER\n3 hr 15 min\nNonstop\nPrice unavailable\nPrice insights\nPrices are currently\ntypical\nTrack prices\nTrack prices from Miami to Caracas departing 2026-11-24 and returning 2026-12-01\nTrack prices from Miami to Caracas - Any dates\nDate grid\nPrice graph\nOther departing flights\n5:22 PM\n–\n12:59 AM\n+\n1\n6 hr 37 min\n1 stop\n$756",
+  "scroll": {
+    "y": 0,
+    "height": 1380
+  },
+  "actions": [
+    {
+      "node": 1,
+      "role": "button",
+      "label": "Main menu",
+      "rect": {
+        "x": 12,
+        "y": 8,
+        "w": 48,
+        "h": 48
+      },
+      "expanded": "false",
+      "kind": "click",
+      "value": "",
+      "id": "e1"
+    },
+    {
+      "node": 2,
+      "role": "link",
+      "label": "Google",
+      "rect": {
+        "x": 64,
+        "y": 22,
+        "w": 74,
+        "h": 24
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e2"
+    },
+    {
+      "node": 3,
+      "role": "button",
+      "label": "Skip to main content",
+      "rect": {
+        "x": 175,
+        "y": 24,
+        "w": 185.484375,
+        "h": 32
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e3"
+    },
+    {
+      "node": 4,
+      "role": "button",
+      "label": "Accessibility feedback",
+      "rect": {
+        "x": 384.484375,
+        "y": 24,
+        "w": 198.703125,
+        "h": 32
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e4"
+    },
+    {
+      "node": 5,
+      "role": "link",
+      "label": "Explore",
+      "rect": {
+        "x": 167,
+        "y": 12,
+        "w": 106.3125,
+        "h": 40
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e5"
+    },
+    {
+      "node": 6,
+      "role": "link",
+      "label": "Flights",
+      "rect": {
+        "x": 279.3125,
+        "y": 12,
+        "w": 98.671875,
+        "h": 40
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e6"
+    },
+    {
+      "node": 7,
+      "role": "link",
+      "label": "Hotels",
+      "rect": {
+        "x": 383.984375,
+        "y": 12,
+        "w": 98.65625,
+        "h": 40
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e7"
+    },
+    {
+      "node": 8,
+      "role": "link",
+      "label": "Vacation rentals",
+      "rect": {
+        "x": 488.640625,
+        "y": 12,
+        "w": 164.40625,
+        "h": 40
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e8"
+    },
+    {
+      "node": 9,
+      "role": "button",
+      "label": "Change appearance",
+      "rect": {
+        "x": 1136,
+        "y": 16,
+        "w": 32,
+        "h": 32
+      },
+      "expanded": "false",
+      "kind": "click",
+      "value": "",
+      "id": "e9"
+    },
+    {
+      "node": 10,
+      "role": "button",
+      "label": "Google apps",
+      "rect": {
+        "x": 1178,
+        "y": 12,
+        "w": 40,
+        "h": 40
+      },
+      "expanded": "false",
+      "kind": "click",
+      "value": "",
+      "id": "e10"
+    },
+    {
+      "node": 11,
+      "role": "button",
+      "label": "Google Account: Example User (user@example.test), Google membership",
+      "rect": {
+        "x": 1226,
+        "y": 12,
+        "w": 40,
+        "h": 40
+      },
+      "expanded": "false",
+      "kind": "click",
+      "value": "",
+      "id": "e11"
+    },
+    {
+      "node": 12,
+      "role": "combobox",
+      "label": "Change ticket type. Round trip",
+      "rect": {
+        "x": 128,
+        "y": 92,
+        "w": 137.34375,
+        "h": 36
+      },
+      "expanded": "false",
+      "kind": "click",
+      "value": "Round trip",
+      "id": "e12"
+    },
+    {
+      "node": 13,
+      "role": "button",
+      "label": "1 passenger, change number of passengers.",
+      "rect": {
+        "x": 269.34375,
+        "y": 92,
+        "w": 80.078125,
+        "h": 36
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e13"
+    },
+    {
+      "node": 14,
+      "role": "combobox",
+      "label": "Change seating class. Economy",
+      "rect": {
+        "x": 353.421875,
+        "y": 92,
+        "w": 102.6875,
+        "h": 36
+      },
+      "expanded": "false",
+      "kind": "click",
+      "value": "Economy",
+      "id": "e14"
+    },
+    {
+      "node": 15,
+      "role": "combobox",
+      "label": "Where from? Miami MIA",
+      "rect": {
+        "x": 128,
+        "y": 136,
+        "w": 314,
+        "h": 56
+      },
+      "expanded": "false",
+      "kind": "fill",
+      "value": "Miami",
+      "id": "e15"
+    },
+    {
+      "node": 15,
+      "role": "combobox",
+      "label": "Open Where from? Miami MIA",
+      "rect": {
+        "x": 128,
+        "y": 136,
+        "w": 314,
+        "h": 56
+      },
+      "expanded": "false",
+      "kind": "click",
+      "value": "Miami",
+      "id": "e16"
+    },
+    {
+      "node": 16,
+      "role": "button",
+      "label": "Swap origin and destination.",
+      "rect": {
+        "x": 429,
+        "y": 147,
+        "w": 34,
+        "h": 34
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e17"
+    },
+    {
+      "node": 17,
+      "role": "combobox",
+      "label": "Where to? Caracas CCS",
+      "rect": {
+        "x": 450,
+        "y": 136,
+        "w": 314,
+        "h": 56
+      },
+      "expanded": "false",
+      "kind": "fill",
+      "value": "Caracas",
+      "id": "e18"
+    },
+    {
+      "node": 17,
+      "role": "combobox",
+      "label": "Open Where to? Caracas CCS",
+      "rect": {
+        "x": 450,
+        "y": 136,
+        "w": 314,
+        "h": 56
+      },
+      "expanded": "false",
+      "kind": "click",
+      "value": "Caracas",
+      "id": "e19"
+    },
+    {
+      "node": 18,
+      "role": "textbox",
+      "label": "Departure",
+      "rect": {
+        "x": 828,
+        "y": 137,
+        "w": 91.984375,
+        "h": 54
+      },
+      "kind": "fill",
+      "value": "Tue, Nov 24",
+      "id": "e20"
+    },
+    {
+      "node": 18,
+      "role": "textbox",
+      "label": "Open Departure",
+      "rect": {
+        "x": 828,
+        "y": 137,
+        "w": 91.984375,
+        "h": 54
+      },
+      "kind": "click",
+      "value": "Tue, Nov 24",
+      "id": "e21"
+    },
+    {
+      "node": 19,
+      "role": "textbox",
+      "label": "Return",
+      "rect": {
+        "x": 997,
+        "y": 137,
+        "w": 91.984375,
+        "h": 54
+      },
+      "kind": "fill",
+      "value": "Tue, Dec 1",
+      "id": "e22"
+    },
+    {
+      "node": 19,
+      "role": "textbox",
+      "label": "Open Return",
+      "rect": {
+        "x": 997,
+        "y": 137,
+        "w": 91.984375,
+        "h": 54
+      },
+      "kind": "click",
+      "value": "Tue, Dec 1",
+      "id": "e23"
+    },
+    {
+      "node": 20,
+      "role": "button",
+      "label": "All filters",
+      "rect": {
+        "x": 128,
+        "y": 200,
+        "w": 113.28125,
+        "h": 32
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e24"
+    },
+    {
+      "node": 21,
+      "role": "button",
+      "label": "Stops, Not selected",
+      "rect": {
+        "x": 249.28125,
+        "y": 200,
+        "w": 84.015625,
+        "h": 32
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e25"
+    },
+    {
+      "node": 22,
+      "role": "button",
+      "label": "Airlines, Not selected",
+      "rect": {
+        "x": 341.296875,
+        "y": 200,
+        "w": 95.96875,
+        "h": 32
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e26"
+    },
+    {
+      "node": 23,
+      "role": "button",
+      "label": "Bags, Not selected",
+      "rect": {
+        "x": 445.265625,
+        "y": 200,
+        "w": 79.234375,
+        "h": 32
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e27"
+    },
+    {
+      "node": 24,
+      "role": "button",
+      "label": "Price, Not selected",
+      "rect": {
+        "x": 532.5,
+        "y": 200,
+        "w": 80.21875,
+        "h": 32
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e28"
+    },
+    {
+      "node": 25,
+      "role": "button",
+      "label": "Times, Not selected",
+      "rect": {
+        "x": 620.71875,
+        "y": 200,
+        "w": 85.75,
+        "h": 32
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e29"
+    },
+    {
+      "node": 26,
+      "role": "button",
+      "label": "Emissions, Not selected",
+      "rect": {
+        "x": 714.46875,
+        "y": 200,
+        "w": 112.546875,
+        "h": 32
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e30"
+    },
+    {
+      "node": 27,
+      "role": "button",
+      "label": "Connecting airports, Not selected",
+      "rect": {
+        "x": 835.015625,
+        "y": 200,
+        "w": 180.375,
+        "h": 32
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e31"
+    },
+    {
+      "node": 28,
+      "role": "button",
+      "label": "Duration, Not selected",
+      "rect": {
+        "x": 1023.390625,
+        "y": 200,
+        "w": 103.984375,
+        "h": 32
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e32"
+    },
+    {
+      "node": 29,
+      "role": "tab",
+      "label": "Best Learn more about ranking Looking for stress-free travel?   These flights are chosen to balance price and convenience, taking into account factors such as duration and number of stops to keep your journey smooth and affordable.   Learn more about how flights are ranked",
+      "rect": {
+        "x": 128,
+        "y": 248,
+        "w": 512.5,
+        "h": 52
+      },
+      "selected": "true",
+      "kind": "click",
+      "value": "",
+      "id": "e33"
+    },
+    {
+      "node": 30,
+      "role": "button",
+      "label": "Learn more about ranking",
+      "rect": {
+        "x": 398.71875,
+        "y": 269.40625,
+        "w": 14,
+        "h": 14
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e34"
+    },
+    {
+      "node": 31,
+      "role": "tab",
+      "label": "Cheapest from   734 US dollars Learn more about ranking Looking for the lowest fares?   These additional budget picks help you save but may involve trade-offs, such as flying back to a different airport in the same city you departed from, self-transferring luggage, or booking via a third-party site.   Learn more about how flights are ranked",
+      "rect": {
+        "x": 639.5,
+        "y": 248,
+        "w": 512.5,
+        "h": 52
+      },
+      "selected": "false",
+      "kind": "click",
+      "value": "",
+      "id": "e35"
+    },
+    {
+      "node": 32,
+      "role": "button",
+      "label": "Learn more about ranking",
+      "rect": {
+        "x": 969.828125,
+        "y": 269,
+        "w": 14,
+        "h": 14
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e36"
+    },
+    {
+      "node": 33,
+      "role": "button",
+      "label": "Learn more about ranking",
+      "rect": {
+        "x": 357.015625,
+        "y": 351,
+        "w": 18,
+        "h": 14
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e37"
+    },
+    {
+      "node": 34,
+      "role": "button",
+      "label": "bag fees",
+      "rect": {
+        "x": 777.390625,
+        "y": 346,
+        "w": 48.34375,
+        "h": 14
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e38"
+    },
+    {
+      "node": 35,
+      "role": "button",
+      "label": "Passenger assistance",
+      "rect": {
+        "x": 128,
+        "y": 366,
+        "w": 123.3125,
+        "h": 14
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e39"
+    },
+    {
+      "node": 36,
+      "role": "button",
+      "label": "Sorted by top flights, Change sort order.",
+      "rect": {
+        "x": 974.734375,
+        "y": 334,
+        "w": 177.265625,
+        "h": 36
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e40"
+    },
+    {
+      "node": 37,
+      "role": "link",
+      "label": "From 815 US dollars round trip total. Nonstop flight with American. Leaves Miami International Airport at 10:10 AM on Tuesday, November 24 and arrives at Simón Bolívar International Airport at 2:36 PM on Tuesday, November 24. Total duration 3 hr 26 min.   Select flight",
+      "rect": {
+        "x": 129,
+        "y": 399,
+        "w": 1022,
+        "h": 74
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e41"
+    },
+    {
+      "node": 38,
+      "role": "button",
+      "label": "Carbon emissions estimate: 200 kilograms. -28% emissions. Learn more about this emissions estimate",
+      "rect": {
+        "x": 883.9375,
+        "y": 439,
+        "w": 18,
+        "h": 14
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e42"
+    },
+    {
+      "node": 39,
+      "role": "button",
+      "label": "Flight details. Leaves Miami International Airport at 10:10 AM on Tuesday, November 24 and arrives at Simón Bolívar International Airport at 2:36 PM on Tuesday, November 24.",
+      "rect": {
+        "x": 1095,
+        "y": 415,
+        "w": 40,
+        "h": 40
+      },
+      "expanded": "false",
+      "kind": "click",
+      "value": "",
+      "id": "e43"
+    },
+    {
+      "node": 40,
+      "role": "link",
+      "label": "Total price is unavailable. Nonstop flight with LASER. Leaves Miami International Airport at 7:30 AM on Tuesday, November 24 and arrives at Simón Bolívar International Airport at 11:45 AM on Tuesday, November 24. Total duration 3 hr 15 min.   Select flight",
+      "rect": {
+        "x": 129,
+        "y": 474,
+        "w": 1022,
+        "h": 74
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e44"
+    },
+    {
+      "node": 41,
+      "role": "button",
+      "label": "Carbon emissions estimate: 189 kilograms. -32% emissions. Learn more about this emissions estimate",
+      "rect": {
+        "x": 890.125,
+        "y": 514,
+        "w": 18,
+        "h": 14
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e45"
+    },
+    {
+      "node": 42,
+      "role": "button",
+      "label": "Flight details. Leaves Miami International Airport at 7:30 AM on Tuesday, November 24 and arrives at Simón Bolívar International Airport at 11:45 AM on Tuesday, November 24.",
+      "rect": {
+        "x": 1095,
+        "y": 490,
+        "w": 40,
+        "h": 40
+      },
+      "expanded": "false",
+      "kind": "click",
+      "value": "",
+      "id": "e46"
+    },
+    {
+      "node": 43,
+      "role": "button",
+      "label": "View price history",
+      "rect": {
+        "x": 1093,
+        "y": 583,
+        "w": 40,
+        "h": 40
+      },
+      "expanded": "false",
+      "kind": "click",
+      "value": "",
+      "id": "e47"
+    },
+    {
+      "node": 44,
+      "role": "button",
+      "label": "Learn more about tracked prices",
+      "rect": {
+        "x": 248.71875,
+        "y": 663.5,
+        "w": 18,
+        "h": 24
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e48"
+    },
+    {
+      "node": 45,
+      "role": "link",
+      "label": "Learn more about tracked prices",
+      "rect": {
+        "x": 248.71875,
+        "y": 663.5,
+        "w": 18,
+        "h": 24
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e49"
+    },
+    {
+      "node": 46,
+      "role": "switch",
+      "label": "Track prices from Miami to Caracas departing 2026-11-24 and returning 2026-12-01",
+      "rect": {
+        "x": 387.6875,
+        "y": 666.5,
+        "w": 36,
+        "h": 14
+      },
+      "checked": "false",
+      "kind": "click",
+      "value": "",
+      "id": "e50"
+    },
+    {
+      "node": 47,
+      "role": "switch",
+      "label": "Track prices from Miami to Caracas - Any dates",
+      "rect": {
+        "x": 542.125,
+        "y": 666.5,
+        "w": 36,
+        "h": 14
+      },
+      "checked": "false",
+      "kind": "click",
+      "value": "",
+      "id": "e51"
+    },
+    {
+      "node": 48,
+      "role": "button",
+      "label": "Date grid",
+      "rect": {
+        "x": 863.578125,
+        "y": 656,
+        "w": 129.9375,
+        "h": 36
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e52"
+    },
+    {
+      "node": 49,
+      "role": "button",
+      "label": "Price graph",
+      "rect": {
+        "x": 1002.515625,
+        "y": 656,
+        "w": 145.484375,
+        "h": 36
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e53"
+    },
+    {
+      "id": "scroll_down",
+      "kind": "scroll",
+      "label": "Scroll down",
+      "delta": 560
+    },
+    {
+      "id": "wait",
+      "kind": "wait",
+      "label": "Wait for the page to update"
+    }
+  ],
+  "marker": [
+    1792151926494.8,
+    "https://www.google.com/travel/flights?hl=en&curr=USD&q=Flights%20from%20MIA%20to%20CCS%20on%202026-11-24%20through%202026-12-01",
+    0,
+    0,
+    1280,
+    780,
+    "Miami to Caracas | Google Flights",
+    "Skip to main content\nAccessibility feedback\nExplore\nFlights\nHotels\nVacation rentals\nFlight search\n1\nFilters\nAll filters\nStops\nAirlines\nBags\nPrice\nTimes\nEmissions\nConnecting airports\nDuration\nSearch results\n7 results returned.\nBest\nCheapest\nfrom\n$734\nTop departing flights\nRanked based on price and convenience\nPrices include required taxes + fees for 1 adult.\nOptional charges and\nbag fees\nmay apply.\nPassenger assistance\ninfo.\nSorted by top flights\n10:10 AM\n–\n2:36 PM\nAmerican\n3 hr 26 min\nNonstop\n$815\nround trip\n7:30 AM\n–\n11:45 AM\nLASER\n3 hr 15 min\nNonstop\nPrice unavailable\nPrice insights\nPrices are currently\ntypical\nTrack prices\nTrack prices from Miami to Caracas departing 2026-11-24 and returning 2026-12-01\nTrack prices from Miami to Caracas - Any dates\nDate grid\nPrice graph\nOther departing flights\n5:22 PM\n–\n12:59 AM\n+\n1\n6 hr 37 min\n1 stop\n$756",
+    [
+      {
+        "node": 1,
+        "role": "button",
+        "label": "Main menu",
+        "expanded": "false",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 2,
+        "role": "link",
+        "label": "Google",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 3,
+        "role": "button",
+        "label": "Skip to main content",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 4,
+        "role": "button",
+        "label": "Accessibility feedback",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 5,
+        "role": "link",
+        "label": "Explore",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 6,
+        "role": "link",
+        "label": "Flights",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 7,
+        "role": "link",
+        "label": "Hotels",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 8,
+        "role": "link",
+        "label": "Vacation rentals",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 9,
+        "role": "button",
+        "label": "Change appearance",
+        "expanded": "false",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 10,
+        "role": "button",
+        "label": "Google apps",
+        "expanded": "false",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 11,
+        "role": "button",
+        "label": "Google Account: Example User (user@example.test), Google membership",
+        "expanded": "false",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 12,
+        "role": "combobox",
+        "label": "Change ticket type. Round trip",
+        "expanded": "false",
+        "kind": "click",
+        "value": "Round trip"
+      },
+      {
+        "node": 13,
+        "role": "button",
+        "label": "1 passenger, change number of passengers.",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 14,
+        "role": "combobox",
+        "label": "Change seating class. Economy",
+        "expanded": "false",
+        "kind": "click",
+        "value": "Economy"
+      },
+      {
+        "node": 15,
+        "role": "combobox",
+        "label": "Where from? Miami MIA",
+        "expanded": "false",
+        "kind": "fill",
+        "value": "Miami"
+      },
+      {
+        "node": 15,
+        "role": "combobox",
+        "label": "Open Where from? Miami MIA",
+        "expanded": "false",
+        "kind": "click",
+        "value": "Miami"
+      },
+      {
+        "node": 16,
+        "role": "button",
+        "label": "Swap origin and destination.",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 17,
+        "role": "combobox",
+        "label": "Where to? Caracas CCS",
+        "expanded": "false",
+        "kind": "fill",
+        "value": "Caracas"
+      },
+      {
+        "node": 17,
+        "role": "combobox",
+        "label": "Open Where to? Caracas CCS",
+        "expanded": "false",
+        "kind": "click",
+        "value": "Caracas"
+      },
+      {
+        "node": 18,
+        "role": "textbox",
+        "label": "Departure",
+        "kind": "fill",
+        "value": "Tue, Nov 24"
+      },
+      {
+        "node": 18,
+        "role": "textbox",
+        "label": "Open Departure",
+        "kind": "click",
+        "value": "Tue, Nov 24"
+      },
+      {
+        "node": 19,
+        "role": "textbox",
+        "label": "Return",
+        "kind": "fill",
+        "value": "Tue, Dec 1"
+      },
+      {
+        "node": 19,
+        "role": "textbox",
+        "label": "Open Return",
+        "kind": "click",
+        "value": "Tue, Dec 1"
+      },
+      {
+        "node": 20,
+        "role": "button",
+        "label": "All filters",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 21,
+        "role": "button",
+        "label": "Stops, Not selected",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 22,
+        "role": "button",
+        "label": "Airlines, Not selected",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 23,
+        "role": "button",
+        "label": "Bags, Not selected",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 24,
+        "role": "button",
+        "label": "Price, Not selected",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 25,
+        "role": "button",
+        "label": "Times, Not selected",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 26,
+        "role": "button",
+        "label": "Emissions, Not selected",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 27,
+        "role": "button",
+        "label": "Connecting airports, Not selected",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 28,
+        "role": "button",
+        "label": "Duration, Not selected",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 29,
+        "role": "tab",
+        "label": "Best Learn more about ranking Looking for stress-free travel?   These flights are chosen to balance price and convenience, taking into account factors such as duration and number of stops to keep your journey smooth and affordable.   Learn more about how flights are ranked",
+        "selected": "true",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 30,
+        "role": "button",
+        "label": "Learn more about ranking",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 31,
+        "role": "tab",
+        "label": "Cheapest from   734 US dollars Learn more about ranking Looking for the lowest fares?   These additional budget picks help you save but may involve trade-offs, such as flying back to a different airport in the same city you departed from, self-transferring luggage, or booking via a third-party site.   Learn more about how flights are ranked",
+        "selected": "false",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 32,
+        "role": "button",
+        "label": "Learn more about ranking",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 33,
+        "role": "button",
+        "label": "Learn more about ranking",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 34,
+        "role": "button",
+        "label": "bag fees",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 35,
+        "role": "button",
+        "label": "Passenger assistance",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 36,
+        "role": "button",
+        "label": "Sorted by top flights, Change sort order.",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 37,
+        "role": "link",
+        "label": "From 815 US dollars round trip total. Nonstop flight with American. Leaves Miami International Airport at 10:10 AM on Tuesday, November 24 and arrives at Simón Bolívar International Airport at 2:36 PM on Tuesday, November 24. Total duration 3 hr 26 min.   Select flight",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 38,
+        "role": "button",
+        "label": "Carbon emissions estimate: 200 kilograms. -28% emissions. Learn more about this emissions estimate",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 39,
+        "role": "button",
+        "label": "Flight details. Leaves Miami International Airport at 10:10 AM on Tuesday, November 24 and arrives at Simón Bolívar International Airport at 2:36 PM on Tuesday, November 24.",
+        "expanded": "false",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 40,
+        "role": "link",
+        "label": "Total price is unavailable. Nonstop flight with LASER. Leaves Miami International Airport at 7:30 AM on Tuesday, November 24 and arrives at Simón Bolívar International Airport at 11:45 AM on Tuesday, November 24. Total duration 3 hr 15 min.   Select flight",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 41,
+        "role": "button",
+        "label": "Carbon emissions estimate: 189 kilograms. -32% emissions. Learn more about this emissions estimate",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 42,
+        "role": "button",
+        "label": "Flight details. Leaves Miami International Airport at 7:30 AM on Tuesday, November 24 and arrives at Simón Bolívar International Airport at 11:45 AM on Tuesday, November 24.",
+        "expanded": "false",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 43,
+        "role": "button",
+        "label": "View price history",
+        "expanded": "false",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 44,
+        "role": "button",
+        "label": "Learn more about tracked prices",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 45,
+        "role": "link",
+        "label": "Learn more about tracked prices",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 46,
+        "role": "switch",
+        "label": "Track prices from Miami to Caracas departing 2026-11-24 and returning 2026-12-01",
+        "checked": "false",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 47,
+        "role": "switch",
+        "label": "Track prices from Miami to Caracas - Any dates",
+        "checked": "false",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 48,
+        "role": "button",
+        "label": "Date grid",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 49,
+        "role": "button",
+        "label": "Price graph",
+        "kind": "click",
+        "value": ""
+      }
+    ],
+    [
+      [
+        15,
+        "Miami",
+        false,
+        null,
+        false,
+        false
+      ],
+      [
+        50,
+        "Miami",
+        false,
+        null,
+        false,
+        false
+      ],
+      [
+        17,
+        "Caracas",
+        false,
+        null,
+        false,
+        false
+      ],
+      [
+        51,
+        "Caracas",
+        false,
+        null,
+        false,
+        false
+      ],
+      [
+        18,
+        "Tue, Nov 24",
+        false,
+        null,
+        false,
+        false
+      ],
+      [
+        19,
+        "Tue, Dec 1",
+        false,
+        null,
+        false,
+        false
+      ],
+      [
+        52,
+        "Tue, Nov 24",
+        false,
+        null,
+        false,
+        false
+      ],
+      [
+        53,
+        "Tue, Dec 1",
+        false,
+        null,
+        false,
+        false
+      ]
+    ]
+  ],
+  "page_key": [
+    1792151926494.8,
+    "https://www.google.com/travel/flights?hl=en&curr=USD&q=Flights%20from%20MIA%20to%20CCS%20on%202026-11-24%20through%202026-12-01",
+    0,
+    0,
+    1280,
+    780,
+    [
+      [
+        15,
+        "Miami",
+        false,
+        null,
+        false,
+        false
+      ],
+      [
+        50,
+        "Miami",
+        false,
+        null,
+        false,
+        false
+      ],
+      [
+        17,
+        "Caracas",
+        false,
+        null,
+        false,
+        false
+      ],
+      [
+        51,
+        "Caracas",
+        false,
+        null,
+        false,
+        false
+      ],
+      [
+        18,
+        "Tue, Nov 24",
+        false,
+        null,
+        false,
+        false
+      ],
+      [
+        19,
+        "Tue, Dec 1",
+        false,
+        null,
+        false,
+        false
+      ],
+      [
+        52,
+        "Tue, Nov 24",
+        false,
+        null,
+        false,
+        false
+      ],
+      [
+        53,
+        "Tue, Dec 1",
+        false,
+        null,
+        false,
+        false
+      ]
+    ]
+  ],
+  "guards": {
+    "1": [
+      1,
+      "button",
+      "Main menu",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      "false",
+      null,
+      null,
+      null,
+      ""
+    ],
+    "2": [
+      2,
+      "link",
+      "Google",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      "/?authuser=0",
+      ""
+    ],
+    "3": [
+      3,
+      "button",
+      "Skip to main content",
+      "",
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "Skip to main content\nAccessibility feedback"
+    ],
+    "4": [
+      4,
+      "button",
+      "Accessibility feedback",
+      "",
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "Skip to main content\nAccessibility feedback"
+    ],
+    "5": [
+      5,
+      "link",
+      "Explore",
+      "",
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "Explore"
+    ],
+    "6": [
+      6,
+      "link",
+      "Flights",
+      "",
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "Flights"
+    ],
+    "7": [
+      7,
+      "link",
+      "Hotels",
+      "",
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "Hotels"
+    ],
+    "8": [
+      8,
+      "link",
+      "Vacation rentals",
+      "",
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "Vacation rentals"
+    ],
+    "9": [
+      9,
+      "button",
+      "Change appearance",
+      "",
+      null,
+      null,
+      null,
+      false,
+      null,
+      "false",
+      null,
+      null,
+      null,
+      ""
+    ],
+    "10": [
+      10,
+      "button",
+      "Google apps",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      "false",
+      null,
+      null,
+      "https://www.google.com/intl/en/about/products",
+      ""
+    ],
+    "11": [
+      11,
+      "button",
+      "Google Account: Example User (user@example.test), Google membership",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      "false",
+      null,
+      null,
+      "https://accounts.google.com/SignOutOptions?hl=en&continue=https://www.google.com/travel/flights%3Fhl%3Den%26curr%3DUSD%26q%3DFlights%2Bfrom%2BMIA%2Bto%2BCCS%2Bon%2B2026-11-24%2Bthrough%2B2026-12-01&ec=GBRAlQM",
+      ""
+    ],
+    "12": [
+      12,
+      "combobox",
+      "Change ticket type. Round trip",
+      null,
+      null,
+      null,
+      null,
+      false,
+      "false",
+      "false",
+      null,
+      null,
+      null,
+      "Round trip"
+    ],
+    "13": [
+      13,
+      "button",
+      "1 passenger, change number of passengers.",
+      "",
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "1"
+    ],
+    "14": [
+      14,
+      "combobox",
+      "Change seating class. Economy",
+      null,
+      null,
+      null,
+      null,
+      false,
+      "false",
+      "false",
+      null,
+      null,
+      null,
+      "Economy"
+    ],
+    "15": [
+      15,
+      "combobox",
+      "Where from? Miami MIA",
+      "Miami",
+      false,
+      null,
+      false,
+      false,
+      null,
+      "false",
+      null,
+      null,
+      null,
+      "Miami MIA"
+    ],
+    "16": [
+      16,
+      "button",
+      "Swap origin and destination.",
+      "",
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      ""
+    ],
+    "17": [
+      17,
+      "combobox",
+      "Where to? Caracas CCS",
+      "Caracas",
+      false,
+      null,
+      false,
+      false,
+      null,
+      "false",
+      null,
+      null,
+      null,
+      "Caracas CCS"
+    ],
+    "18": [
+      18,
+      "textbox",
+      "Departure",
+      "Tue, Nov 24",
+      false,
+      null,
+      false,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      ""
+    ],
+    "19": [
+      19,
+      "textbox",
+      "Return",
+      "Tue, Dec 1",
+      false,
+      null,
+      false,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      ""
+    ],
+    "20": [
+      20,
+      "button",
+      "All filters",
+      "",
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "All filters"
+    ],
+    "21": [
+      21,
+      "button",
+      "Stops, Not selected",
+      "",
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "Stops"
+    ],
+    "22": [
+      22,
+      "button",
+      "Airlines, Not selected",
+      "",
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "Airlines"
+    ],
+    "23": [
+      23,
+      "button",
+      "Bags, Not selected",
+      "",
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "Bags"
+    ],
+    "24": [
+      24,
+      "button",
+      "Price, Not selected",
+      "",
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "Price"
+    ],
+    "25": [
+      25,
+      "button",
+      "Times, Not selected",
+      "",
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "Times"
+    ],
+    "26": [
+      26,
+      "button",
+      "Emissions, Not selected",
+      "",
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "Emissions"
+    ],
+    "27": [
+      27,
+      "button",
+      "Connecting airports, Not selected",
+      "",
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "Connecting airports"
+    ],
+    "28": [
+      28,
+      "button",
+      "Duration, Not selected",
+      "",
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "Duration"
+    ],
+    "29": [
+      29,
+      "tab",
+      "Best Learn more about ranking Looking for stress-free travel?   These flights are chosen to balance price and convenience, taking into account factors such as duration and number of stops to keep your journey smooth and affordable.   Learn more about how flights are ranked",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      "true",
+      null,
+      "Best\nCheapest\nfrom $734"
+    ],
+    "30": [
+      30,
+      "button",
+      "Learn more about ranking",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      ""
+    ],
+    "31": [
+      31,
+      "tab",
+      "Cheapest from   734 US dollars Learn more about ranking Looking for the lowest fares?   These additional budget picks help you save but may involve trade-offs, such as flying back to a different airport in the same city you departed from, self-transferring luggage, or booking via a third-party site.   Learn more about how flights are ranked",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      "false",
+      null,
+      "Best\nCheapest\nfrom $734"
+    ],
+    "32": [
+      32,
+      "button",
+      "Learn more about ranking",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      ""
+    ],
+    "33": [
+      33,
+      "button",
+      "Learn more about ranking",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      ""
+    ],
+    "34": [
+      34,
+      "button",
+      "bag fees",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "Optional charges and bag fees may apply. Passenger assistance info."
+    ],
+    "35": [
+      35,
+      "button",
+      "Passenger assistance",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "Passenger assistance info."
+    ],
+    "36": [
+      36,
+      "button",
+      "Sorted by top flights, Change sort order.",
+      "",
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "Sorted by top flights"
+    ],
+    "37": [
+      37,
+      "link",
+      "From 815 US dollars round trip total. Nonstop flight with American. Leaves Miami International Airport at 10:10 AM on Tuesday, November 24 and arrives at Simón Bolívar International Airport at 2:36 PM on Tuesday, November 24. Total duration 3 hr 26 min.   Select flight",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "10:10 AM\n – \n2:36 PM\nAmerican\n3 hr 26 min\nMIA–CCS\nNonstop\n200 kg CO2e\n-28% emissions\n$815\nround trip"
+    ],
+    "38": [
+      38,
+      "button",
+      "Carbon emissions estimate: 200 kilograms. -28% emissions. Learn more about this emissions estimate",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "10:10 AM\n – \n2:36 PM\nAmerican\n3 hr 26 min\nMIA–CCS\nNonstop\n200 kg CO2e\n-28% emissions\n$815\nround trip"
+    ],
+    "39": [
+      39,
+      "button",
+      "Flight details. Leaves Miami International Airport at 10:10 AM on Tuesday, November 24 and arrives at Simón Bolívar International Airport at 2:36 PM on Tuesday, November 24.",
+      "",
+      null,
+      null,
+      null,
+      false,
+      null,
+      "false",
+      null,
+      null,
+      null,
+      "10:10 AM\n – \n2:36 PM\nAmerican\n3 hr 26 min\nMIA–CCS\nNonstop\n200 kg CO2e\n-28% emissions\n$815\nround trip"
+    ],
+    "40": [
+      40,
+      "link",
+      "Total price is unavailable. Nonstop flight with LASER. Leaves Miami International Airport at 7:30 AM on Tuesday, November 24 and arrives at Simón Bolívar International Airport at 11:45 AM on Tuesday, November 24. Total duration 3 hr 15 min.   Select flight",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "7:30 AM\n – \n11:45 AM\nLASER\n3 hr 15 min\nMIA–CCS\nNonstop\n189 kg CO2e\n-32% emissions\nPrice unavailable"
+    ],
+    "41": [
+      41,
+      "button",
+      "Carbon emissions estimate: 189 kilograms. -32% emissions. Learn more about this emissions estimate",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "7:30 AM\n – \n11:45 AM\nLASER\n3 hr 15 min\nMIA–CCS\nNonstop\n189 kg CO2e\n-32% emissions\nPrice unavailable"
+    ],
+    "42": [
+      42,
+      "button",
+      "Flight details. Leaves Miami International Airport at 7:30 AM on Tuesday, November 24 and arrives at Simón Bolívar International Airport at 11:45 AM on Tuesday, November 24.",
+      "",
+      null,
+      null,
+      null,
+      false,
+      null,
+      "false",
+      null,
+      null,
+      null,
+      "7:30 AM\n – \n11:45 AM\nLASER\n3 hr 15 min\nMIA–CCS\nNonstop\n189 kg CO2e\n-32% emissions\nPrice unavailable"
+    ],
+    "43": [
+      43,
+      "button",
+      "View price history",
+      "",
+      null,
+      null,
+      null,
+      false,
+      null,
+      "false",
+      null,
+      null,
+      null,
+      ""
+    ],
+    "44": [
+      44,
+      "button",
+      "Learn more about tracked prices",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      ""
+    ],
+    "45": [
+      45,
+      "link",
+      "Learn more about tracked prices",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      ""
+    ],
+    "46": [
+      46,
+      "switch",
+      "Track prices from Miami to Caracas departing 2026-11-24 and returning 2026-12-01",
+      "",
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      "false",
+      null,
+      null,
+      ""
+    ],
+    "47": [
+      47,
+      "switch",
+      "Track prices from Miami to Caracas - Any dates",
+      "",
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      "false",
+      null,
+      null,
+      ""
+    ],
+    "48": [
+      48,
+      "button",
+      "Date grid",
+      "",
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "Date grid"
+    ],
+    "49": [
+      49,
+      "button",
+      "Price graph",
+      "",
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "Price graph"
+    ]
+  },
+  "omitted_actions": 0,
+  "fingerprint": "c17e1f5d45ece6935505e1c09452ea72b03e5f082c07ff2a084a0e14620d2c2f",
+  "_note": "Results page as first observed at a 780px viewport: snapshot.js drops the Date grid button because its centre is outside the viewport."
+}

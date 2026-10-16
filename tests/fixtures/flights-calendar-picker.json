@@ -1,0 +1,2445 @@
+{
+  "url": "https://www.google.com/travel/flights?hl=en&curr=USD&q=Flights%20from%20MIA%20to%20CCS%20on%202026-11-24%20through%202026-12-01",
+  "title": "Miami to Caracas | Google Flights",
+  "w": 1280,
+  "h": 780,
+  "text": "Reset\nOctober\n16\n$1,080\n17\n$1,060\n18\n$1,150\n19\n$979\n20\n$979\n21\n$935\n22\n$916\n23\n$837\n24\n$824\n25\n$790\n26\n$852\n27\n$784\n28\n$790\n29\n$852\n30\n$726\n31\n$664\nNovember\n1\n$664\n2\n$664\n3\n$664\n4\n$664\n5\n$726\n6\n$664\n7\n$664\n8\n$726\n9\n$664\n10\n$664\n11\n$664\n12\n$664\n13\n$664\n14\n$664\n15\n$664\n16\n$797\n17\n$797\n18\n$726\n19\n$756\n20\n$1,030\n21\n$855\n22\n$810\n23\n$797\n24\n$756\n25\n$756\n26\n$756\n27\n$756\n28\n$797\n29\n$856\n30\n$886\n6\n7\n13\n14\n20\n21\n27\n28\nShowing prices in USD for\n7 day trips\nUnderlined prices indicate cheapest compared with other prices shown\nDone",
+  "scroll": {
+    "y": 0,
+    "height": 1380
+  },
+  "actions": [
+    {
+      "node": 52,
+      "role": "textbox",
+      "label": "Departure",
+      "rect": {
+        "x": 829,
+        "y": 136,
+        "w": 91.984375,
+        "h": 54
+      },
+      "kind": "fill",
+      "value": "Tue, Nov 24",
+      "id": "e1"
+    },
+    {
+      "node": 52,
+      "role": "textbox",
+      "label": "Open Departure",
+      "rect": {
+        "x": 829,
+        "y": 136,
+        "w": 91.984375,
+        "h": 54
+      },
+      "kind": "click",
+      "value": "Tue, Nov 24",
+      "id": "e2"
+    },
+    {
+      "node": 53,
+      "role": "textbox",
+      "label": "Return",
+      "rect": {
+        "x": 998,
+        "y": 136,
+        "w": 91.984375,
+        "h": 54
+      },
+      "kind": "fill",
+      "value": "Tue, Dec 1",
+      "id": "e3"
+    },
+    {
+      "node": 53,
+      "role": "textbox",
+      "label": "Open Return",
+      "rect": {
+        "x": 998,
+        "y": 136,
+        "w": 91.984375,
+        "h": 54
+      },
+      "kind": "click",
+      "value": "Tue, Dec 1",
+      "id": "e4"
+    },
+    {
+      "node": 54,
+      "role": "combobox",
+      "label": "Select your ticket type. Round trip",
+      "rect": {
+        "x": 399,
+        "y": 139,
+        "w": 138.671875,
+        "h": 48
+      },
+      "expanded": "false",
+      "kind": "click",
+      "value": "Round trip",
+      "id": "e5"
+    },
+    {
+      "node": 55,
+      "role": "button",
+      "label": "Reset",
+      "rect": {
+        "x": 679.0625,
+        "y": 147,
+        "w": 85.9375,
+        "h": 32
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e6"
+    },
+    {
+      "node": 56,
+      "role": "button",
+      "label": "Friday, October 16, 2026 , 1082 US dollars",
+      "rect": {
+        "x": 655,
+        "y": 413,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e7"
+    },
+    {
+      "node": 57,
+      "role": "button",
+      "label": "Saturday, October 17, 2026 , 1062 US dollars",
+      "rect": {
+        "x": 703,
+        "y": 413,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e8"
+    },
+    {
+      "node": 58,
+      "role": "button",
+      "label": "Sunday, October 18, 2026 , 1148 US dollars",
+      "rect": {
+        "x": 415,
+        "y": 465,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e9"
+    },
+    {
+      "node": 59,
+      "role": "button",
+      "label": "Monday, October 19, 2026 , 979 US dollars",
+      "rect": {
+        "x": 463,
+        "y": 465,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e10"
+    },
+    {
+      "node": 60,
+      "role": "button",
+      "label": "Tuesday, October 20, 2026 , 979 US dollars",
+      "rect": {
+        "x": 511,
+        "y": 465,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e11"
+    },
+    {
+      "node": 61,
+      "role": "button",
+      "label": "Wednesday, October 21, 2026 , 935 US dollars",
+      "rect": {
+        "x": 559,
+        "y": 465,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e12"
+    },
+    {
+      "node": 62,
+      "role": "button",
+      "label": "Thursday, October 22, 2026 , 916 US dollars",
+      "rect": {
+        "x": 607,
+        "y": 465,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e13"
+    },
+    {
+      "node": 63,
+      "role": "button",
+      "label": "Friday, October 23, 2026 , 837 US dollars",
+      "rect": {
+        "x": 655,
+        "y": 465,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e14"
+    },
+    {
+      "node": 64,
+      "role": "button",
+      "label": "Saturday, October 24, 2026 , 824 US dollars",
+      "rect": {
+        "x": 703,
+        "y": 465,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e15"
+    },
+    {
+      "node": 65,
+      "role": "button",
+      "label": "Sunday, October 25, 2026 , 790 US dollars",
+      "rect": {
+        "x": 415,
+        "y": 517,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e16"
+    },
+    {
+      "node": 66,
+      "role": "button",
+      "label": "Monday, October 26, 2026 , 852 US dollars",
+      "rect": {
+        "x": 463,
+        "y": 517,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e17"
+    },
+    {
+      "node": 67,
+      "role": "button",
+      "label": "Tuesday, October 27, 2026 , 784 US dollars",
+      "rect": {
+        "x": 511,
+        "y": 517,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e18"
+    },
+    {
+      "node": 68,
+      "role": "button",
+      "label": "Wednesday, October 28, 2026 , 790 US dollars",
+      "rect": {
+        "x": 559,
+        "y": 517,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e19"
+    },
+    {
+      "node": 69,
+      "role": "button",
+      "label": "Thursday, October 29, 2026 , 852 US dollars",
+      "rect": {
+        "x": 607,
+        "y": 517,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e20"
+    },
+    {
+      "node": 70,
+      "role": "button",
+      "label": "Friday, October 30, 2026 , 726 US dollars",
+      "rect": {
+        "x": 655,
+        "y": 517,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e21"
+    },
+    {
+      "node": 71,
+      "role": "button",
+      "label": "Saturday, October 31, 2026 , 664 US dollars, Cheapest price",
+      "rect": {
+        "x": 703,
+        "y": 517,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e22"
+    },
+    {
+      "node": 72,
+      "role": "button",
+      "label": "Sunday, November 1, 2026 , 664 US dollars, Cheapest price",
+      "rect": {
+        "x": 799,
+        "y": 309,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e23"
+    },
+    {
+      "node": 73,
+      "role": "button",
+      "label": "Monday, November 2, 2026 , 664 US dollars, Cheapest price",
+      "rect": {
+        "x": 847,
+        "y": 309,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e24"
+    },
+    {
+      "node": 74,
+      "role": "button",
+      "label": "Tuesday, November 3, 2026 , 664 US dollars, Cheapest price",
+      "rect": {
+        "x": 895,
+        "y": 309,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e25"
+    },
+    {
+      "node": 75,
+      "role": "button",
+      "label": "Wednesday, November 4, 2026 , 664 US dollars, Cheapest price",
+      "rect": {
+        "x": 943,
+        "y": 309,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e26"
+    },
+    {
+      "node": 76,
+      "role": "button",
+      "label": "Thursday, November 5, 2026 , 726 US dollars",
+      "rect": {
+        "x": 991,
+        "y": 309,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e27"
+    },
+    {
+      "node": 77,
+      "role": "button",
+      "label": "Friday, November 6, 2026 , 664 US dollars, Cheapest price",
+      "rect": {
+        "x": 1039,
+        "y": 309,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e28"
+    },
+    {
+      "node": 78,
+      "role": "button",
+      "label": "Saturday, November 7, 2026 , 664 US dollars, Cheapest price",
+      "rect": {
+        "x": 1087,
+        "y": 309,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e29"
+    },
+    {
+      "node": 79,
+      "role": "button",
+      "label": "Sunday, November 8, 2026 , 726 US dollars",
+      "rect": {
+        "x": 799,
+        "y": 361,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e30"
+    },
+    {
+      "node": 80,
+      "role": "button",
+      "label": "Monday, November 9, 2026 , 664 US dollars, Cheapest price",
+      "rect": {
+        "x": 847,
+        "y": 361,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e31"
+    },
+    {
+      "node": 81,
+      "role": "button",
+      "label": "Tuesday, November 10, 2026 , 664 US dollars, Cheapest price",
+      "rect": {
+        "x": 895,
+        "y": 361,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e32"
+    },
+    {
+      "node": 82,
+      "role": "button",
+      "label": "Wednesday, November 11, 2026 , 664 US dollars, Cheapest price",
+      "rect": {
+        "x": 943,
+        "y": 361,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e33"
+    },
+    {
+      "node": 83,
+      "role": "button",
+      "label": "Thursday, November 12, 2026 , 664 US dollars, Cheapest price",
+      "rect": {
+        "x": 991,
+        "y": 361,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e34"
+    },
+    {
+      "node": 84,
+      "role": "button",
+      "label": "Friday, November 13, 2026 , 664 US dollars, Cheapest price",
+      "rect": {
+        "x": 1039,
+        "y": 361,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e35"
+    },
+    {
+      "node": 85,
+      "role": "button",
+      "label": "Saturday, November 14, 2026 , 664 US dollars, Cheapest price",
+      "rect": {
+        "x": 1087,
+        "y": 361,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e36"
+    },
+    {
+      "node": 86,
+      "role": "button",
+      "label": "Sunday, November 15, 2026 , 664 US dollars, Cheapest price",
+      "rect": {
+        "x": 799,
+        "y": 413,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e37"
+    },
+    {
+      "node": 87,
+      "role": "button",
+      "label": "Monday, November 16, 2026 , 797 US dollars",
+      "rect": {
+        "x": 847,
+        "y": 413,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e38"
+    },
+    {
+      "node": 88,
+      "role": "button",
+      "label": "Tuesday, November 17, 2026 , 797 US dollars",
+      "rect": {
+        "x": 895,
+        "y": 413,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e39"
+    },
+    {
+      "node": 89,
+      "role": "button",
+      "label": "Wednesday, November 18, 2026 , 726 US dollars",
+      "rect": {
+        "x": 943,
+        "y": 413,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e40"
+    },
+    {
+      "node": 90,
+      "role": "button",
+      "label": "Thursday, November 19, 2026 , 756 US dollars",
+      "rect": {
+        "x": 991,
+        "y": 413,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e41"
+    },
+    {
+      "node": 91,
+      "role": "button",
+      "label": "Friday, November 20, 2026 , 1027 US dollars",
+      "rect": {
+        "x": 1039,
+        "y": 413,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e42"
+    },
+    {
+      "node": 92,
+      "role": "button",
+      "label": "Saturday, November 21, 2026 , 855 US dollars",
+      "rect": {
+        "x": 1087,
+        "y": 413,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e43"
+    },
+    {
+      "node": 93,
+      "role": "button",
+      "label": "Sunday, November 22, 2026 , 810 US dollars",
+      "rect": {
+        "x": 799,
+        "y": 465,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e44"
+    },
+    {
+      "node": 94,
+      "role": "button",
+      "label": "Monday, November 23, 2026 , 797 US dollars",
+      "rect": {
+        "x": 847,
+        "y": 465,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e45"
+    },
+    {
+      "node": 95,
+      "role": "button",
+      "label": "Tuesday, November 24, 2026, departure date. , 756 US dollars",
+      "rect": {
+        "x": 895,
+        "y": 465,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e46"
+    },
+    {
+      "node": 96,
+      "role": "button",
+      "label": "Wednesday, November 25, 2026 , 756 US dollars",
+      "rect": {
+        "x": 943,
+        "y": 465,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e47"
+    },
+    {
+      "node": 97,
+      "role": "button",
+      "label": "Thursday, November 26, 2026 , 756 US dollars",
+      "rect": {
+        "x": 991,
+        "y": 465,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e48"
+    },
+    {
+      "node": 98,
+      "role": "button",
+      "label": "Friday, November 27, 2026 , 756 US dollars",
+      "rect": {
+        "x": 1039,
+        "y": 465,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e49"
+    },
+    {
+      "node": 99,
+      "role": "button",
+      "label": "Saturday, November 28, 2026 , 797 US dollars",
+      "rect": {
+        "x": 1087,
+        "y": 465,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e50"
+    },
+    {
+      "node": 100,
+      "role": "button",
+      "label": "Sunday, November 29, 2026 , 856 US dollars",
+      "rect": {
+        "x": 799,
+        "y": 517,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e51"
+    },
+    {
+      "node": 101,
+      "role": "button",
+      "label": "Monday, November 30, 2026 , 886 US dollars",
+      "rect": {
+        "x": 847,
+        "y": 517,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e52"
+    },
+    {
+      "node": 102,
+      "role": "button",
+      "label": "Sunday, December 6, 2026",
+      "rect": {
+        "x": 1183,
+        "y": 361,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e53"
+    },
+    {
+      "node": 103,
+      "role": "button",
+      "label": "Monday, December 7, 2026",
+      "rect": {
+        "x": 1231,
+        "y": 361,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e54"
+    },
+    {
+      "node": 104,
+      "role": "button",
+      "label": "Sunday, December 13, 2026",
+      "rect": {
+        "x": 1183,
+        "y": 413,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e55"
+    },
+    {
+      "node": 105,
+      "role": "button",
+      "label": "Monday, December 14, 2026",
+      "rect": {
+        "x": 1231,
+        "y": 413,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e56"
+    },
+    {
+      "node": 106,
+      "role": "button",
+      "label": "Sunday, December 20, 2026",
+      "rect": {
+        "x": 1183,
+        "y": 465,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e57"
+    },
+    {
+      "node": 107,
+      "role": "button",
+      "label": "Monday, December 21, 2026",
+      "rect": {
+        "x": 1231,
+        "y": 465,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e58"
+    },
+    {
+      "node": 108,
+      "role": "button",
+      "label": "Sunday, December 27, 2026",
+      "rect": {
+        "x": 1183,
+        "y": 517,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e59"
+    },
+    {
+      "node": 109,
+      "role": "button",
+      "label": "Monday, December 28, 2026",
+      "rect": {
+        "x": 1231,
+        "y": 517,
+        "w": 48,
+        "h": 48
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e60"
+    },
+    {
+      "node": 110,
+      "role": "button",
+      "label": "Next",
+      "rect": {
+        "x": 1149,
+        "y": 394,
+        "w": 40,
+        "h": 40
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e61"
+    },
+    {
+      "node": 111,
+      "role": "button",
+      "label": "Done. Search for round trip flights, departing on November 24, 2026 and returning on December 1, 2026",
+      "rect": {
+        "x": 1069.734375,
+        "y": 647,
+        "w": 83.265625,
+        "h": 32
+      },
+      "kind": "click",
+      "value": "",
+      "id": "e62"
+    },
+    {
+      "id": "scroll_down",
+      "kind": "scroll",
+      "label": "Scroll down",
+      "delta": 560
+    },
+    {
+      "id": "wait",
+      "kind": "wait",
+      "label": "Wait for the page to update"
+    }
+  ],
+  "marker": [
+    1792151931901.4,
+    "https://www.google.com/travel/flights?hl=en&curr=USD&q=Flights%20from%20MIA%20to%20CCS%20on%202026-11-24%20through%202026-12-01",
+    0,
+    0,
+    1280,
+    780,
+    "Miami to Caracas | Google Flights",
+    "Reset\nOctober\n16\n$1,080\n17\n$1,060\n18\n$1,150\n19\n$979\n20\n$979\n21\n$935\n22\n$916\n23\n$837\n24\n$824\n25\n$790\n26\n$852\n27\n$784\n28\n$790\n29\n$852\n30\n$726\n31\n$664\nNovember\n1\n$664\n2\n$664\n3\n$664\n4\n$664\n5\n$726\n6\n$664\n7\n$664\n8\n$726\n9\n$664\n10\n$664\n11\n$664\n12\n$664\n13\n$664\n14\n$664\n15\n$664\n16\n$797\n17\n$797\n18\n$726\n19\n$756\n20\n$1,030\n21\n$855\n22\n$810\n23\n$797\n24\n$756\n25\n$756\n26\n$756\n27\n$756\n28\n$797\n29\n$856\n30\n$886\n6\n7\n13\n14\n20\n21\n27\n28\nShowing prices in USD for\n7 day trips\nUnderlined prices indicate cheapest compared with other prices shown\nDone",
+    [
+      {
+        "node": 52,
+        "role": "textbox",
+        "label": "Departure",
+        "kind": "fill",
+        "value": "Tue, Nov 24"
+      },
+      {
+        "node": 52,
+        "role": "textbox",
+        "label": "Open Departure",
+        "kind": "click",
+        "value": "Tue, Nov 24"
+      },
+      {
+        "node": 53,
+        "role": "textbox",
+        "label": "Return",
+        "kind": "fill",
+        "value": "Tue, Dec 1"
+      },
+      {
+        "node": 53,
+        "role": "textbox",
+        "label": "Open Return",
+        "kind": "click",
+        "value": "Tue, Dec 1"
+      },
+      {
+        "node": 54,
+        "role": "combobox",
+        "label": "Select your ticket type. Round trip",
+        "expanded": "false",
+        "kind": "click",
+        "value": "Round trip"
+      },
+      {
+        "node": 55,
+        "role": "button",
+        "label": "Reset",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 56,
+        "role": "button",
+        "label": "Friday, October 16, 2026 , 1082 US dollars",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 57,
+        "role": "button",
+        "label": "Saturday, October 17, 2026 , 1062 US dollars",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 58,
+        "role": "button",
+        "label": "Sunday, October 18, 2026 , 1148 US dollars",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 59,
+        "role": "button",
+        "label": "Monday, October 19, 2026 , 979 US dollars",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 60,
+        "role": "button",
+        "label": "Tuesday, October 20, 2026 , 979 US dollars",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 61,
+        "role": "button",
+        "label": "Wednesday, October 21, 2026 , 935 US dollars",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 62,
+        "role": "button",
+        "label": "Thursday, October 22, 2026 , 916 US dollars",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 63,
+        "role": "button",
+        "label": "Friday, October 23, 2026 , 837 US dollars",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 64,
+        "role": "button",
+        "label": "Saturday, October 24, 2026 , 824 US dollars",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 65,
+        "role": "button",
+        "label": "Sunday, October 25, 2026 , 790 US dollars",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 66,
+        "role": "button",
+        "label": "Monday, October 26, 2026 , 852 US dollars",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 67,
+        "role": "button",
+        "label": "Tuesday, October 27, 2026 , 784 US dollars",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 68,
+        "role": "button",
+        "label": "Wednesday, October 28, 2026 , 790 US dollars",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 69,
+        "role": "button",
+        "label": "Thursday, October 29, 2026 , 852 US dollars",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 70,
+        "role": "button",
+        "label": "Friday, October 30, 2026 , 726 US dollars",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 71,
+        "role": "button",
+        "label": "Saturday, October 31, 2026 , 664 US dollars, Cheapest price",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 72,
+        "role": "button",
+        "label": "Sunday, November 1, 2026 , 664 US dollars, Cheapest price",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 73,
+        "role": "button",
+        "label": "Monday, November 2, 2026 , 664 US dollars, Cheapest price",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 74,
+        "role": "button",
+        "label": "Tuesday, November 3, 2026 , 664 US dollars, Cheapest price",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 75,
+        "role": "button",
+        "label": "Wednesday, November 4, 2026 , 664 US dollars, Cheapest price",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 76,
+        "role": "button",
+        "label": "Thursday, November 5, 2026 , 726 US dollars",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 77,
+        "role": "button",
+        "label": "Friday, November 6, 2026 , 664 US dollars, Cheapest price",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 78,
+        "role": "button",
+        "label": "Saturday, November 7, 2026 , 664 US dollars, Cheapest price",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 79,
+        "role": "button",
+        "label": "Sunday, November 8, 2026 , 726 US dollars",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 80,
+        "role": "button",
+        "label": "Monday, November 9, 2026 , 664 US dollars, Cheapest price",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 81,
+        "role": "button",
+        "label": "Tuesday, November 10, 2026 , 664 US dollars, Cheapest price",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 82,
+        "role": "button",
+        "label": "Wednesday, November 11, 2026 , 664 US dollars, Cheapest price",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 83,
+        "role": "button",
+        "label": "Thursday, November 12, 2026 , 664 US dollars, Cheapest price",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 84,
+        "role": "button",
+        "label": "Friday, November 13, 2026 , 664 US dollars, Cheapest price",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 85,
+        "role": "button",
+        "label": "Saturday, November 14, 2026 , 664 US dollars, Cheapest price",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 86,
+        "role": "button",
+        "label": "Sunday, November 15, 2026 , 664 US dollars, Cheapest price",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 87,
+        "role": "button",
+        "label": "Monday, November 16, 2026 , 797 US dollars",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 88,
+        "role": "button",
+        "label": "Tuesday, November 17, 2026 , 797 US dollars",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 89,
+        "role": "button",
+        "label": "Wednesday, November 18, 2026 , 726 US dollars",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 90,
+        "role": "button",
+        "label": "Thursday, November 19, 2026 , 756 US dollars",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 91,
+        "role": "button",
+        "label": "Friday, November 20, 2026 , 1027 US dollars",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 92,
+        "role": "button",
+        "label": "Saturday, November 21, 2026 , 855 US dollars",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 93,
+        "role": "button",
+        "label": "Sunday, November 22, 2026 , 810 US dollars",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 94,
+        "role": "button",
+        "label": "Monday, November 23, 2026 , 797 US dollars",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 95,
+        "role": "button",
+        "label": "Tuesday, November 24, 2026, departure date. , 756 US dollars",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 96,
+        "role": "button",
+        "label": "Wednesday, November 25, 2026 , 756 US dollars",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 97,
+        "role": "button",
+        "label": "Thursday, November 26, 2026 , 756 US dollars",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 98,
+        "role": "button",
+        "label": "Friday, November 27, 2026 , 756 US dollars",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 99,
+        "role": "button",
+        "label": "Saturday, November 28, 2026 , 797 US dollars",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 100,
+        "role": "button",
+        "label": "Sunday, November 29, 2026 , 856 US dollars",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 101,
+        "role": "button",
+        "label": "Monday, November 30, 2026 , 886 US dollars",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 102,
+        "role": "button",
+        "label": "Sunday, December 6, 2026",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 103,
+        "role": "button",
+        "label": "Monday, December 7, 2026",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 104,
+        "role": "button",
+        "label": "Sunday, December 13, 2026",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 105,
+        "role": "button",
+        "label": "Monday, December 14, 2026",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 106,
+        "role": "button",
+        "label": "Sunday, December 20, 2026",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 107,
+        "role": "button",
+        "label": "Monday, December 21, 2026",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 108,
+        "role": "button",
+        "label": "Sunday, December 27, 2026",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 109,
+        "role": "button",
+        "label": "Monday, December 28, 2026",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 110,
+        "role": "button",
+        "label": "Next",
+        "kind": "click",
+        "value": ""
+      },
+      {
+        "node": 111,
+        "role": "button",
+        "label": "Done. Search for round trip flights, departing on November 24, 2026 and returning on December 1, 2026",
+        "kind": "click",
+        "value": ""
+      }
+    ],
+    [
+      [
+        15,
+        "Miami",
+        false,
+        null,
+        false,
+        false
+      ],
+      [
+        50,
+        "Miami",
+        false,
+        null,
+        false,
+        false
+      ],
+      [
+        17,
+        "Caracas",
+        false,
+        null,
+        false,
+        false
+      ],
+      [
+        51,
+        "Caracas",
+        false,
+        null,
+        false,
+        false
+      ],
+      [
+        18,
+        "Tue, Nov 24",
+        false,
+        null,
+        false,
+        false
+      ],
+      [
+        19,
+        "Tue, Dec 1",
+        false,
+        null,
+        false,
+        false
+      ],
+      [
+        52,
+        "Tue, Nov 24",
+        false,
+        null,
+        false,
+        false
+      ],
+      [
+        53,
+        "Tue, Dec 1",
+        false,
+        null,
+        false,
+        false
+      ]
+    ]
+  ],
+  "page_key": [
+    1792151931901.4,
+    "https://www.google.com/travel/flights?hl=en&curr=USD&q=Flights%20from%20MIA%20to%20CCS%20on%202026-11-24%20through%202026-12-01",
+    0,
+    0,
+    1280,
+    780,
+    [
+      [
+        15,
+        "Miami",
+        false,
+        null,
+        false,
+        false
+      ],
+      [
+        50,
+        "Miami",
+        false,
+        null,
+        false,
+        false
+      ],
+      [
+        17,
+        "Caracas",
+        false,
+        null,
+        false,
+        false
+      ],
+      [
+        51,
+        "Caracas",
+        false,
+        null,
+        false,
+        false
+      ],
+      [
+        18,
+        "Tue, Nov 24",
+        false,
+        null,
+        false,
+        false
+      ],
+      [
+        19,
+        "Tue, Dec 1",
+        false,
+        null,
+        false,
+        false
+      ],
+      [
+        52,
+        "Tue, Nov 24",
+        false,
+        null,
+        false,
+        false
+      ],
+      [
+        53,
+        "Tue, Dec 1",
+        false,
+        null,
+        false,
+        false
+      ]
+    ]
+  ],
+  "guards": {
+    "52": [
+      52,
+      "textbox",
+      "Departure",
+      "Tue, Nov 24",
+      false,
+      null,
+      false,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "Round trip\nReset\nOctober\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n$1,080\n17\n$1,060\n18\n$1,150\n19\n$979\n20\n$979\n21\n$935\n22\n$916\n23\n$837\n24\n$824\n25\n$790\n26\n$852\n27\n$784\n28\n$790\n29\n$852\n30\n$726\n31\n$664\nNovember\nS\nM\nT\nW\nT\nF\nS\n1\n$664\n2\n$664\n3\n$664\n4\n$664\n5\n$726\n6\n$664\n7\n$664\n8\n$726\n9\n$664\n10\n$664\n11\n$664\n12\n$664\n13\n$664\n14\n$664\n15\n$664\n16\n$797\n17\n$797\n18\n$726\n19\n$756\n20\n$1,030\n21\n$855\n22\n$810\n23\n$797\n24\n$756\n25\n$756\n26\n$756\n27\n$756\n28\n$797\n29\n$856\n30\n$886\nDecember\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nJanuary 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nFebruary 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\nMarch 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nApril 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\nMay 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nJune 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\nJuly 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nAugust 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nSeptember 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\nShowing prices in USD for\n7 day trips\nUnderlined prices indicate cheapest compared with other prices shown\nDone"
+    ],
+    "53": [
+      53,
+      "textbox",
+      "Return",
+      "Tue, Dec 1",
+      false,
+      null,
+      false,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "Round trip\nReset\nOctober\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n$1,080\n17\n$1,060\n18\n$1,150\n19\n$979\n20\n$979\n21\n$935\n22\n$916\n23\n$837\n24\n$824\n25\n$790\n26\n$852\n27\n$784\n28\n$790\n29\n$852\n30\n$726\n31\n$664\nNovember\nS\nM\nT\nW\nT\nF\nS\n1\n$664\n2\n$664\n3\n$664\n4\n$664\n5\n$726\n6\n$664\n7\n$664\n8\n$726\n9\n$664\n10\n$664\n11\n$664\n12\n$664\n13\n$664\n14\n$664\n15\n$664\n16\n$797\n17\n$797\n18\n$726\n19\n$756\n20\n$1,030\n21\n$855\n22\n$810\n23\n$797\n24\n$756\n25\n$756\n26\n$756\n27\n$756\n28\n$797\n29\n$856\n30\n$886\nDecember\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nJanuary 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nFebruary 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\nMarch 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nApril 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\nMay 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nJune 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\nJuly 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nAugust 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nSeptember 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\nShowing prices in USD for\n7 day trips\nUnderlined prices indicate cheapest compared with other prices shown\nDone"
+    ],
+    "54": [
+      54,
+      "combobox",
+      "Select your ticket type. Round trip",
+      null,
+      null,
+      null,
+      null,
+      false,
+      "false",
+      "false",
+      null,
+      null,
+      null,
+      "Round trip\nReset\nOctober\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n$1,080\n17\n$1,060\n18\n$1,150\n19\n$979\n20\n$979\n21\n$935\n22\n$916\n23\n$837\n24\n$824\n25\n$790\n26\n$852\n27\n$784\n28\n$790\n29\n$852\n30\n$726\n31\n$664\nNovember\nS\nM\nT\nW\nT\nF\nS\n1\n$664\n2\n$664\n3\n$664\n4\n$664\n5\n$726\n6\n$664\n7\n$664\n8\n$726\n9\n$664\n10\n$664\n11\n$664\n12\n$664\n13\n$664\n14\n$664\n15\n$664\n16\n$797\n17\n$797\n18\n$726\n19\n$756\n20\n$1,030\n21\n$855\n22\n$810\n23\n$797\n24\n$756\n25\n$756\n26\n$756\n27\n$756\n28\n$797\n29\n$856\n30\n$886\nDecember\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nJanuary 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nFebruary 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\nMarch 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nApril 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\nMay 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nJune 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\nJuly 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nAugust 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nSeptember 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\nShowing prices in USD for\n7 day trips\nUnderlined prices indicate cheapest compared with other prices shown\nDone"
+    ],
+    "55": [
+      55,
+      "button",
+      "Reset",
+      "",
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "Round trip\nReset\nOctober\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n$1,080\n17\n$1,060\n18\n$1,150\n19\n$979\n20\n$979\n21\n$935\n22\n$916\n23\n$837\n24\n$824\n25\n$790\n26\n$852\n27\n$784\n28\n$790\n29\n$852\n30\n$726\n31\n$664\nNovember\nS\nM\nT\nW\nT\nF\nS\n1\n$664\n2\n$664\n3\n$664\n4\n$664\n5\n$726\n6\n$664\n7\n$664\n8\n$726\n9\n$664\n10\n$664\n11\n$664\n12\n$664\n13\n$664\n14\n$664\n15\n$664\n16\n$797\n17\n$797\n18\n$726\n19\n$756\n20\n$1,030\n21\n$855\n22\n$810\n23\n$797\n24\n$756\n25\n$756\n26\n$756\n27\n$756\n28\n$797\n29\n$856\n30\n$886\nDecember\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nJanuary 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nFebruary 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\nMarch 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nApril 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\nMay 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nJune 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\nJuly 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nAugust 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nSeptember 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\nShowing prices in USD for\n7 day trips\nUnderlined prices indicate cheapest compared with other prices shown\nDone"
+    ],
+    "56": [
+      56,
+      "button",
+      "Friday, October 16, 2026 , 1082 US dollars",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "11\n12\n13\n14\n15\n16\n$1,080\n17\n$1,060"
+    ],
+    "57": [
+      57,
+      "button",
+      "Saturday, October 17, 2026 , 1062 US dollars",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "11\n12\n13\n14\n15\n16\n$1,080\n17\n$1,060"
+    ],
+    "58": [
+      58,
+      "button",
+      "Sunday, October 18, 2026 , 1148 US dollars",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "18\n$1,150\n19\n$979\n20\n$979\n21\n$935\n22\n$916\n23\n$837\n24\n$824"
+    ],
+    "59": [
+      59,
+      "button",
+      "Monday, October 19, 2026 , 979 US dollars",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "18\n$1,150\n19\n$979\n20\n$979\n21\n$935\n22\n$916\n23\n$837\n24\n$824"
+    ],
+    "60": [
+      60,
+      "button",
+      "Tuesday, October 20, 2026 , 979 US dollars",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "18\n$1,150\n19\n$979\n20\n$979\n21\n$935\n22\n$916\n23\n$837\n24\n$824"
+    ],
+    "61": [
+      61,
+      "button",
+      "Wednesday, October 21, 2026 , 935 US dollars",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "18\n$1,150\n19\n$979\n20\n$979\n21\n$935\n22\n$916\n23\n$837\n24\n$824"
+    ],
+    "62": [
+      62,
+      "button",
+      "Thursday, October 22, 2026 , 916 US dollars",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "18\n$1,150\n19\n$979\n20\n$979\n21\n$935\n22\n$916\n23\n$837\n24\n$824"
+    ],
+    "63": [
+      63,
+      "button",
+      "Friday, October 23, 2026 , 837 US dollars",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "18\n$1,150\n19\n$979\n20\n$979\n21\n$935\n22\n$916\n23\n$837\n24\n$824"
+    ],
+    "64": [
+      64,
+      "button",
+      "Saturday, October 24, 2026 , 824 US dollars",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "18\n$1,150\n19\n$979\n20\n$979\n21\n$935\n22\n$916\n23\n$837\n24\n$824"
+    ],
+    "65": [
+      65,
+      "button",
+      "Sunday, October 25, 2026 , 790 US dollars",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "25\n$790\n26\n$852\n27\n$784\n28\n$790\n29\n$852\n30\n$726\n31\n$664"
+    ],
+    "66": [
+      66,
+      "button",
+      "Monday, October 26, 2026 , 852 US dollars",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "25\n$790\n26\n$852\n27\n$784\n28\n$790\n29\n$852\n30\n$726\n31\n$664"
+    ],
+    "67": [
+      67,
+      "button",
+      "Tuesday, October 27, 2026 , 784 US dollars",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "25\n$790\n26\n$852\n27\n$784\n28\n$790\n29\n$852\n30\n$726\n31\n$664"
+    ],
+    "68": [
+      68,
+      "button",
+      "Wednesday, October 28, 2026 , 790 US dollars",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "25\n$790\n26\n$852\n27\n$784\n28\n$790\n29\n$852\n30\n$726\n31\n$664"
+    ],
+    "69": [
+      69,
+      "button",
+      "Thursday, October 29, 2026 , 852 US dollars",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "25\n$790\n26\n$852\n27\n$784\n28\n$790\n29\n$852\n30\n$726\n31\n$664"
+    ],
+    "70": [
+      70,
+      "button",
+      "Friday, October 30, 2026 , 726 US dollars",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "25\n$790\n26\n$852\n27\n$784\n28\n$790\n29\n$852\n30\n$726\n31\n$664"
+    ],
+    "71": [
+      71,
+      "button",
+      "Saturday, October 31, 2026 , 664 US dollars, Cheapest price",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "25\n$790\n26\n$852\n27\n$784\n28\n$790\n29\n$852\n30\n$726\n31\n$664"
+    ],
+    "72": [
+      72,
+      "button",
+      "Sunday, November 1, 2026 , 664 US dollars, Cheapest price",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "1\n$664\n2\n$664\n3\n$664\n4\n$664\n5\n$726\n6\n$664\n7\n$664"
+    ],
+    "73": [
+      73,
+      "button",
+      "Monday, November 2, 2026 , 664 US dollars, Cheapest price",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "1\n$664\n2\n$664\n3\n$664\n4\n$664\n5\n$726\n6\n$664\n7\n$664"
+    ],
+    "74": [
+      74,
+      "button",
+      "Tuesday, November 3, 2026 , 664 US dollars, Cheapest price",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "1\n$664\n2\n$664\n3\n$664\n4\n$664\n5\n$726\n6\n$664\n7\n$664"
+    ],
+    "75": [
+      75,
+      "button",
+      "Wednesday, November 4, 2026 , 664 US dollars, Cheapest price",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "1\n$664\n2\n$664\n3\n$664\n4\n$664\n5\n$726\n6\n$664\n7\n$664"
+    ],
+    "76": [
+      76,
+      "button",
+      "Thursday, November 5, 2026 , 726 US dollars",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "1\n$664\n2\n$664\n3\n$664\n4\n$664\n5\n$726\n6\n$664\n7\n$664"
+    ],
+    "77": [
+      77,
+      "button",
+      "Friday, November 6, 2026 , 664 US dollars, Cheapest price",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "1\n$664\n2\n$664\n3\n$664\n4\n$664\n5\n$726\n6\n$664\n7\n$664"
+    ],
+    "78": [
+      78,
+      "button",
+      "Saturday, November 7, 2026 , 664 US dollars, Cheapest price",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "1\n$664\n2\n$664\n3\n$664\n4\n$664\n5\n$726\n6\n$664\n7\n$664"
+    ],
+    "79": [
+      79,
+      "button",
+      "Sunday, November 8, 2026 , 726 US dollars",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "8\n$726\n9\n$664\n10\n$664\n11\n$664\n12\n$664\n13\n$664\n14\n$664"
+    ],
+    "80": [
+      80,
+      "button",
+      "Monday, November 9, 2026 , 664 US dollars, Cheapest price",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "8\n$726\n9\n$664\n10\n$664\n11\n$664\n12\n$664\n13\n$664\n14\n$664"
+    ],
+    "81": [
+      81,
+      "button",
+      "Tuesday, November 10, 2026 , 664 US dollars, Cheapest price",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "8\n$726\n9\n$664\n10\n$664\n11\n$664\n12\n$664\n13\n$664\n14\n$664"
+    ],
+    "82": [
+      82,
+      "button",
+      "Wednesday, November 11, 2026 , 664 US dollars, Cheapest price",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "8\n$726\n9\n$664\n10\n$664\n11\n$664\n12\n$664\n13\n$664\n14\n$664"
+    ],
+    "83": [
+      83,
+      "button",
+      "Thursday, November 12, 2026 , 664 US dollars, Cheapest price",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "8\n$726\n9\n$664\n10\n$664\n11\n$664\n12\n$664\n13\n$664\n14\n$664"
+    ],
+    "84": [
+      84,
+      "button",
+      "Friday, November 13, 2026 , 664 US dollars, Cheapest price",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "8\n$726\n9\n$664\n10\n$664\n11\n$664\n12\n$664\n13\n$664\n14\n$664"
+    ],
+    "85": [
+      85,
+      "button",
+      "Saturday, November 14, 2026 , 664 US dollars, Cheapest price",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "8\n$726\n9\n$664\n10\n$664\n11\n$664\n12\n$664\n13\n$664\n14\n$664"
+    ],
+    "86": [
+      86,
+      "button",
+      "Sunday, November 15, 2026 , 664 US dollars, Cheapest price",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "15\n$664\n16\n$797\n17\n$797\n18\n$726\n19\n$756\n20\n$1,030\n21\n$855"
+    ],
+    "87": [
+      87,
+      "button",
+      "Monday, November 16, 2026 , 797 US dollars",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "15\n$664\n16\n$797\n17\n$797\n18\n$726\n19\n$756\n20\n$1,030\n21\n$855"
+    ],
+    "88": [
+      88,
+      "button",
+      "Tuesday, November 17, 2026 , 797 US dollars",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "15\n$664\n16\n$797\n17\n$797\n18\n$726\n19\n$756\n20\n$1,030\n21\n$855"
+    ],
+    "89": [
+      89,
+      "button",
+      "Wednesday, November 18, 2026 , 726 US dollars",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "15\n$664\n16\n$797\n17\n$797\n18\n$726\n19\n$756\n20\n$1,030\n21\n$855"
+    ],
+    "90": [
+      90,
+      "button",
+      "Thursday, November 19, 2026 , 756 US dollars",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "15\n$664\n16\n$797\n17\n$797\n18\n$726\n19\n$756\n20\n$1,030\n21\n$855"
+    ],
+    "91": [
+      91,
+      "button",
+      "Friday, November 20, 2026 , 1027 US dollars",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "15\n$664\n16\n$797\n17\n$797\n18\n$726\n19\n$756\n20\n$1,030\n21\n$855"
+    ],
+    "92": [
+      92,
+      "button",
+      "Saturday, November 21, 2026 , 855 US dollars",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "15\n$664\n16\n$797\n17\n$797\n18\n$726\n19\n$756\n20\n$1,030\n21\n$855"
+    ],
+    "93": [
+      93,
+      "button",
+      "Sunday, November 22, 2026 , 810 US dollars",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "22\n$810\n23\n$797\n24\n$756\n25\n$756\n26\n$756\n27\n$756\n28\n$797"
+    ],
+    "94": [
+      94,
+      "button",
+      "Monday, November 23, 2026 , 797 US dollars",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "22\n$810\n23\n$797\n24\n$756\n25\n$756\n26\n$756\n27\n$756\n28\n$797"
+    ],
+    "95": [
+      95,
+      "button",
+      "Tuesday, November 24, 2026, departure date. , 756 US dollars",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "22\n$810\n23\n$797\n24\n$756\n25\n$756\n26\n$756\n27\n$756\n28\n$797"
+    ],
+    "96": [
+      96,
+      "button",
+      "Wednesday, November 25, 2026 , 756 US dollars",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "22\n$810\n23\n$797\n24\n$756\n25\n$756\n26\n$756\n27\n$756\n28\n$797"
+    ],
+    "97": [
+      97,
+      "button",
+      "Thursday, November 26, 2026 , 756 US dollars",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "22\n$810\n23\n$797\n24\n$756\n25\n$756\n26\n$756\n27\n$756\n28\n$797"
+    ],
+    "98": [
+      98,
+      "button",
+      "Friday, November 27, 2026 , 756 US dollars",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "22\n$810\n23\n$797\n24\n$756\n25\n$756\n26\n$756\n27\n$756\n28\n$797"
+    ],
+    "99": [
+      99,
+      "button",
+      "Saturday, November 28, 2026 , 797 US dollars",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "22\n$810\n23\n$797\n24\n$756\n25\n$756\n26\n$756\n27\n$756\n28\n$797"
+    ],
+    "100": [
+      100,
+      "button",
+      "Sunday, November 29, 2026 , 856 US dollars",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "29\n$856\n30\n$886"
+    ],
+    "101": [
+      101,
+      "button",
+      "Monday, November 30, 2026 , 886 US dollars",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "29\n$856\n30\n$886"
+    ],
+    "102": [
+      102,
+      "button",
+      "Sunday, December 6, 2026",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "6\n7\n8\n9\n10\n11\n12"
+    ],
+    "103": [
+      103,
+      "button",
+      "Monday, December 7, 2026",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "6\n7\n8\n9\n10\n11\n12"
+    ],
+    "104": [
+      104,
+      "button",
+      "Sunday, December 13, 2026",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "13\n14\n15\n16\n17\n18\n19"
+    ],
+    "105": [
+      105,
+      "button",
+      "Monday, December 14, 2026",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "13\n14\n15\n16\n17\n18\n19"
+    ],
+    "106": [
+      106,
+      "button",
+      "Sunday, December 20, 2026",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "20\n21\n22\n23\n24\n25\n26"
+    ],
+    "107": [
+      107,
+      "button",
+      "Monday, December 21, 2026",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "20\n21\n22\n23\n24\n25\n26"
+    ],
+    "108": [
+      108,
+      "button",
+      "Sunday, December 27, 2026",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "27\n28\n29\n30\n31"
+    ],
+    "109": [
+      109,
+      "button",
+      "Monday, December 28, 2026",
+      null,
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "27\n28\n29\n30\n31"
+    ],
+    "110": [
+      110,
+      "button",
+      "Next",
+      "",
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "Round trip\nReset\nOctober\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n$1,080\n17\n$1,060\n18\n$1,150\n19\n$979\n20\n$979\n21\n$935\n22\n$916\n23\n$837\n24\n$824\n25\n$790\n26\n$852\n27\n$784\n28\n$790\n29\n$852\n30\n$726\n31\n$664\nNovember\nS\nM\nT\nW\nT\nF\nS\n1\n$664\n2\n$664\n3\n$664\n4\n$664\n5\n$726\n6\n$664\n7\n$664\n8\n$726\n9\n$664\n10\n$664\n11\n$664\n12\n$664\n13\n$664\n14\n$664\n15\n$664\n16\n$797\n17\n$797\n18\n$726\n19\n$756\n20\n$1,030\n21\n$855\n22\n$810\n23\n$797\n24\n$756\n25\n$756\n26\n$756\n27\n$756\n28\n$797\n29\n$856\n30\n$886\nDecember\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nJanuary 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nFebruary 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\nMarch 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nApril 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\nMay 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nJune 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\nJuly 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nAugust 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nSeptember 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\nShowing prices in USD for\n7 day trips\nUnderlined prices indicate cheapest compared with other prices shown\nDone"
+    ],
+    "111": [
+      111,
+      "button",
+      "Done. Search for round trip flights, departing on November 24, 2026 and returning on December 1, 2026",
+      "",
+      null,
+      null,
+      null,
+      false,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "Round trip\nReset\nOctober\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n$1,080\n17\n$1,060\n18\n$1,150\n19\n$979\n20\n$979\n21\n$935\n22\n$916\n23\n$837\n24\n$824\n25\n$790\n26\n$852\n27\n$784\n28\n$790\n29\n$852\n30\n$726\n31\n$664\nNovember\nS\nM\nT\nW\nT\nF\nS\n1\n$664\n2\n$664\n3\n$664\n4\n$664\n5\n$726\n6\n$664\n7\n$664\n8\n$726\n9\n$664\n10\n$664\n11\n$664\n12\n$664\n13\n$664\n14\n$664\n15\n$664\n16\n$797\n17\n$797\n18\n$726\n19\n$756\n20\n$1,030\n21\n$855\n22\n$810\n23\n$797\n24\n$756\n25\n$756\n26\n$756\n27\n$756\n28\n$797\n29\n$856\n30\n$886\nDecember\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nJanuary 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nFebruary 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\nMarch 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nApril 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\nMay 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nJune 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\nJuly 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nAugust 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nSeptember 2027\nS\nM\nT\nW\nT\nF\nS\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\nShowing prices in USD for\n7 day trips\nUnderlined prices indicate cheapest compared with other prices shown\nDone"
+    ]
+  },
+  "omitted_actions": 0,
+  "fingerprint": "e7d33454d0af22c50d78b49d76598ef776c88489af0eb57a9a448663b91218f3",
+  "_note": "The calendar picker. It also renders a price per day, and was once mistaken for the date grid. The grid step must not resolve against this page."
+}
